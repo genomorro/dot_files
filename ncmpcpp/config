@@ -1,0 +1,65 @@
+# Path
+mpd_music_dir = "/home/DATOS/Música"
+
+# Playlist
+song_list_format = "{%t - %a}|{%t}|{%f}$R{%b} (%l)"
+song_columns_list_format = "(35){t} (28){a} (28){b} (7){l}"
+song_window_title_format = "{%a - }{%t}|{%f}"
+alternative_header_first_line_format = "$b$aqqu$/a {%t}|{%f} $atqq$/a$/b"
+alternative_header_second_line_format = "{{$b%a$/b}{ - %b}{ (%y)}}|{%D}"
+playlist_display_mode = "classic" (classic/columns)
+now_playing_prefix = "$b"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+
+# Bars •
+user_interface = "alternative"
+display_screens_numbers_on_start = "yes"
+song_status_format = "{{%a{ \"%b\"{ (%y)}} - }{%t}}|{%f}"
+progressbar_look = "°|."
+titles_visibility = "no"
+display_bitrate = "yes"
+
+# Browser
+browser_playlist_prefix = "$2plist »$9 "
+browser_display_mode = "classic" (classic/columns)
+screen_switcher_mode = "sequence: 2 -> 5 -> 4"
+show_hidden_files_in_local_browser = "yes"
+
+# Colors
+colors_enabled = "yes"
+active_column_color = "white"
+active_window_border = "white"
+alternative_ui_separator_color = "white"
+color1 = "red"
+color2 = "blue"
+empty_tag_color = "white"
+header_window_color = "white"
+main_window_color = "white"
+main_window_highlight_color = "white"
+progressbar_color = "white"
+state_flags_color = "white"
+state_line_color = "white"
+statusbar_color = "white"
+visualizer_color = "white"
+volume_color = "white"
+window_border_color = "white"
+
+# Others
+#song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "no"
+display_screens_numbers_on_start = "no"
+clock_display_seconds = "yes"
+follow_now_playing_lyrics = "yes"
+lastfm_preferred_language = "es"
+allow_physical_files_deletion = "no"
+allow_physical_directories_deletion = "no"
+#use_console_editor = "yes"
+
+# Mouse Support
+mouse_support = "yes"
+header_text_scrolling = "yes"
+fancy_scrolling = "yes"
+cyclic_scrolling = "no"
+lines_scrolled = "1" 
