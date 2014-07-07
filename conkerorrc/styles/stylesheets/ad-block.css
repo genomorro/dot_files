@@ -1,0 +1,285 @@
+/* Sun Jul  6 21:01:38 2014 */
+/* Import all CSS based ad blockers */
+
+@import url("http://www.gozer.org/mozilla/ad_blocking/css/ad_blocking.css");
+@import url("http://www.gozer.org/mozilla/ad_blocking/css/sites.css");
+@import url("http://www.floppymoose.com/userContent.css");
+/* @import url("http://stevenf.com/shutup/shutup-latest.css"); */
+
+/* https://userstyles.org/styles/100686/userstyles-org-cleaner-no-ads */
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("userstyles.org") {
+    div.ad,
+    div#post-install-ad,
+    div#below-install-ad.ad,
+    div#stylish-installed-style-installed>div {
+        display: none !important;
+    }
+}
+
+/* https://userstyles.org/styles/101444/youtube-com-cleaner-no-ads */
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("youtube.com") {
+    #watch-channel-brand-div {
+        display: none !important;
+    }
+}
+
+/* https://userstyles.org/styles/97600/word-reference */
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("www.wordreference.com") {
+    #rightcolumn,
+    #ad1,
+    body > :nth-child(5){
+        display: none !important;
+    }
+    #centercolumn{
+        width: 100% !important;
+    }
+}
+
+/* https://userstyles.org/styles/94894/generic-ad-blocker */
+/* i really want this to be global */
+
+*[class="adsbygoogle"],
+*[id^="google_ads_frame"],
+*[id^="google_ads_iframe"],
+*[href^="http://googleads.g.doubleclick.net"],
+*[id^="zrt_ads_frame"],
+*[src^="http://www.da-ads.com/"],
+*[src^="http://ad.ladssrv.info"],
+*[src^="//coinurl.com/"],
+*[src^="//ad.a-ads.com/"],
+*[src^="http://d.delivery45.com/"],
+*[src^="http://syndication.exoclick.com/"],
+*[src^="http://ads2.msads.net"],
+*[src^="http://adserver."],
+*[src^="http://ads.trafficjunky.net"],
+*[src^="http://ss.phncdn.com/"],
+*[src^="http://ads2.contentabc.com"],
+*[src^="//dp.g.doubleclick.net"],
+*[src^="http://geo.hyperlinksecure.com"],
+*[src^="http://pixel.mathtag.com/click/"],
+*[src^="http://creative.mathads.com/"],
+*[src*=".adnxs.com/"],
+*[href^="http://ad.doubleclick.net"],
+*[href^="http://ams1.ib.adnxs.com"],
+*[href^="http://a.tribalfusion.com/h.click"],
+*[href^="//coinurl.com/"],
+*[href^="//ad.a-ads.com/"],
+*[href^="http://d.delivery45.com/"],
+*[href^="http://syndication.exoclick.com/"],
+*[href^="http://ads2.msads.net"],
+*[href^="http://adserver."],
+*[href^="http://ads.trafficjunky.net"],
+*[href^="http://ss.phncdn.com/"],
+*[href^="http://ads2.contentabc.com"],
+*[href^="//dp.g.doubleclick.net"],
+*[href^="http://geo.hyperlinksecure.com"],
+*[href^="http://pixel.mathtag.com/click/"],
+*[href^="http://creative.mathads.com/"],
+*[href*=".adnxs.com/"],
+#ad-container-span-old {
+    position: absolute !important;
+    top: -9999999em !important;
+    left: -999999999em !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.000001 !important;}
+
+*[src^="http://cdncache3-a.akamaihd.net"] {
+    display: none !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -999999px !important;}
+a[title="Click to Continue > by Text-Enhance"] {
+    pointer-events: none !important;
+    color: inherit !important;
+    text-decoration: initial !important;}
+
+@-moz-document domain("tiarawhy.com") {
+    *[src^="http://adserver."],
+    *[href^="http://adserver."] {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        display: block !important;
+        width: 50px !important;
+        height: 50px !important;}
+}
+
+@-moz-document domain("deviantart.com") {
+    .dp-ad-chrome,
+    .blt-ad-container,
+    .sleekadbubble,
+    .ad-blocking-makes-fella-confused,
+    .partial-ad,
+    .da-custom-ad-box,
+    .dac-ad-frontpage-banner,
+    .tower-ad-header,
+    .sleekadfooter {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+/*[[0.5]]*/
+
+    .gruze-main.pad-left {
+        margin-left: 0px;
+    }
+
+    .gruze-main.pad-right {
+        margin-left: 0px;
+    }
+}
+
+@-moz-document regexp(".*.deviantart.com/$") {
+    div[gmi-typeid="50"], div[gmi-name="ad_zone"] {
+        display: none !important;
+    }
+}
+
+@-moz-document url-prefix("http://orteil.dashnet.org/cookieclicker/") {
+    #support, .supportPlaceholder, #sectionAd {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+
+    #sectionRight {
+        right: 0px !important;}
+
+    #sectionMiddle {
+        right: 318px !important;}
+
+    .separatorRight {
+        right: 317px !important;}
+}
+
+@-moz-document domain("www.youtube.com") {
+    #watch-channel-brand-div,
+    #watch-longform-ad,
+    DIV[id^="google_ads"] {
+        display: none !important;
+        width: 0px !important;
+        height: 0px !important;
+        position: absolute !important;
+        top: -100000000px !important;}
+}
+
+@-moz-document domain("www.equestriadaily.com") {
+    .settings + div,
+    div[id*="-ad"],
+    #sidebar-right-headlines > div[id^="LinkList"][class="widget LinkList"] + div {
+        display: none !important;
+    }
+}
+
+@-moz-document domain("www.fimfiction.net") {
+    ins, .ad_container,
+    .right.list_boxes > .user-links ~ *:not(.content_box) {
+        display: none !important;
+    }
+}
+
+@-moz-document domain("newgrounds.com") {
+    div[class="headerads"],
+    div[class="footerads"],
+    div[style="position:fixed;top:0px;left:0;z-index:100;width:100%;height:768px;overflow:hidden;visibility:hidden;"],
+    div[style="position:fixed;top:0px;right:0;z-index:100;width:100%;height:768px;overflow:hidden;visibility:hidden;"],
+    #portal_reviews ~ script + DIV,
+    .textads,
+    .skinad-l, .skinad-r,
+    #main > DIV:nth-child(5) > DIV:last-child {
+        display: none !important;}
+
+    div[id="footer"] {height: 575px !important;}
+
+    #cpmstar_skinRightObject > OBJECT,
+    #cpmstar_skinLeftObject > OBJECT {
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    .adcode_container {display: none !important;}
+}
+
+@-moz-document url-prefix("http://www.newgrounds.com/wiki") {
+    .thincol > DIV:first-child,
+        #main > DIV:nth-child(5) > DIV:last-child {display: block !important;}
+}
+
+@-moz-document url("http://www.newgrounds.com/") {
+    #main > DIV:nth-child(4) > DIV:nth-child(2),
+        #main > DIV:nth-child(4) > DIV:nth-child(5) {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+    .fatcol > DIV:last-child {display: block !important;}
+}
+
+@-moz-document regexp("http://www.newgrounds.com/(art|games|movies|audio|collection)"),
+    regexp("http://www.newgrounds.com/fpa/(games|movies)/../...."),
+    regexp("http://www.newgrounds.com/fpa/(games|movies)"),
+    regexp("http://www.newgrounds.com/(art|games|movies|audio|collection)/browse/(interval|sort|genre)/.*"),
+    regexp("http://www.newgrounds.com/(art|games|movies|audio|collection)/browse#.*"),
+    regexp("http://www.newgrounds.com/(portal|art|games|movies|audio|collection)/view/.*"),
+    regexp("http://www.newgrounds.com/(art|games|movies|audio|collection)/browse"),
+    url-prefix("http://www.newgrounds.com/wiki") {
+
+        .thincol > DIV:first-child,
+            .thincol > DIV:last-child {
+                display: none !important;}
+    }
+
+@-moz-document regexp("http://www.newgrounds.com/(art|games|movies|audio|collection)/under_judgment") {
+    .thincol > DIV:last-child {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+}
+
+@-moz-document regexp("http://www.newgrounds.com/portal/search/(art|games|movies|audio|collection)/.*") {
+    .thincol > * {display: none !important;}
+
+    .fatcol > DIV {
+        width: 942px !important;
+        background-image: url("http://cssimg.ngfiles.com/bg-main/pod-33.jpg") !important;}
+
+    li > DIV > DIV > DIV > p {width: 100% !important;}
+
+    .podcontent {background-repeat: repeat-x !important;}
+    li:hover > a {
+        background: url(http://cssimg.ngfiles.com/icons/hovers/hoverticks-L.png)
+            902px
+            -20px
+            no-repeat !important;}
+}
+
+@-moz-document domain("imgur.com") {
+    .advertisement {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+}
+
+@-moz-document domain("videoweed.es") {
+    .ad,
+    .remove_ads {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+}
+
+/*-adfly-*/
+
+@-moz-document url-prefix("http://www.dailymotion.com/video") {
+    #right_content_box > #mc_Middle {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+}

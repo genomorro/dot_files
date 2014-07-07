@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Command line fu</os:ShortName>
+<os:Description>Grep the archive</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACy0tLXIuLS14Li0teC4tLXguLS14Li0teC4uLngvLy94Li0teC4tLXguLS14Li0teC4tLXguLS14JiYmNQAAABDh29v//fb2//z19f/89vb//Pb2//z29v/48vL/3NnZ///4+P/99vb//fb2//339//+9/f/8+zs/7u2tn4AAAAQzsnJ/zo6Ov9DQkL/QkFB/0FAQP9APz//Pj4+/z09Pf87Ozv/Ojk5/zg3N/83Njb/Kioq/765uf+8trZ5AAAAEMjDw/87Ozv/T09P/0xMTP9ISUn/RUVF/0FBQf89PT3/ODg4/zQ0NP8uLi7/Kioq/xcXF/+0r6//vbe3eQAAABDIxMT/Ojo6/01NTf9KSkr/R0dH/0RERP9BQUH/Ozs7/zg4OP8zMzP/Li4u/yoqKv8XFxf/tbCw/723t3kAAAAQycTE/zw8PP9NTU3/SkpK/0dHR/9ERET/QUFB/zs7O/84ODj/MzMz/y4uLv8qKir/FxcX/7WwsP+9t7d5AAAAEMnFxf9DQ0P/UlJS/0pKSv9HR0f/RERE/0FBQf87Ozv/ODg4/zMzM/8uLi7/Kioq/xcXF/+1sLD/vbe3eQAAABDJxcX/Q0ND/1dXV/9SUlL/RUVF/0BAQP9BQUH/Ozs7/zg4OP8zMzP/Li4u/yoqKv8XFxf/tbCw/723t3kAAAAQycXF/0NDQ/9WVlb/UlJS/56env+Kior/QEBA/zw8PP84ODj/MzMz/y4uLv8qKir/FxcX/7WwsP+9t7d5AAAAEMnFxf9DQ0P/enp6/3h4eP9LS0v/S0tL/0tLS/9FRUX/QEBA/zg4OP8yMjL/Kysr/xcXF/+0r6//vbe3eQAAABDJxcX/Q0ND/5iYmP+Tk5P/TExM/01NTf9LS0v/RUVF/0JCQv89PT3/Ojo6/zU1Nf8iIiL/t7Ky/723t3kAAAAPy8bG/zExMf8/Pz//Ojs7/z09Pf86Ojr/Nzc3/zIzM/8vMDD/Kyws/ygoKP8kJCT/EhMT/7ezs/+9t7d6AAAACdrU1P7Qysr/zsnJ/87Jyf/Oysr/z8rK/8/Kyv/Pysr/z8rK/8/Kyv/Pysr/z8rK/8/Kyv/n4eH+vLe3dAAAAAC+ublt0MvLk9DLy5PQy8uT0MvLk9DLy5PQy8uT0MvLk9DLy5PQy8uT0MvLk9DLy5PQy8uTz8nJkJGMjBsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAADAAQAA//8AAA==</os:Image>
+<SearchForm>http://www.commandlinefu.com/</SearchForm>
+<os:Url type="text/html" method="POST" template="http://www.commandlinefu.com/search/handler">
+  <os:Param name="q" value="{searchTerms}"/>
+  <os:Param name="sourceid" value="Mozilla-search"/>
+</os:Url><os:Url type="application/opensearchdescription+xml" method="GET" template="http://mycroftproject.com/updateos.php/id0/commandlinefu.xml" rel="self">
+</os:Url>
+</SearchPlugin>

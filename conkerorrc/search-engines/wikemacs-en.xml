@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>WikEmacs (en)</os:ShortName>
+<os:Description>WikEmacs (en)</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<SearchForm>http://wikemacs.org/index.php/Special:Search</SearchForm>
+<os:Url type="text/html" method="GET" template="http://wikemacs.org/index.php?title=Special:Search&amp;search={searchTerms}">
+</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="http://wikemacs.org/api.php?action=opensearch&amp;search={searchTerms}&amp;namespace=0">
+</os:Url>
+</SearchPlugin>

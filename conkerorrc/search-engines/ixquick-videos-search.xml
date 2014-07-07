@@ -1,0 +1,14 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Ixquick SSL Videos - English</os:ShortName>
+<os:Description>Search Ixquick Videos, a privacy conscious metasearch engine, securely via SSL.</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABmJLR0QA/wD/AP+gvaeTAAABkUlEQVR42o2SzysEYRjHv7s7s81glRyUgzgpctizA8VZLkoSJ3twk1r5ByibHJzk5DQxSCnUciEnP1ZZ1K52JVsI89qZd97X7K7XYbfVZtR+b+/zfT5P7/u8Xwg3hbVrg+ZcLS/cpMez+sWzq+UCXGVYmohowqoW0G4oagN67J3Y+aqA3bgBWYGiut5KiuynIPsh+SHJkOQ3x3vHVMCGT1o6Y8RKIfcFhwHAF2ttVD3R+GtIS6a5AqUOak1pDrPBLXAGy4BFwCk4DQ92zo73eIQQxM6HtHs94UBWSkCOg5rIMdAsuN3gdVYmu4d62wF4hBDFnsjhU/jgFT4JhTw4Q8EBo7BIsKVue6avtSlQbPsFSsxWEj4/Cg44hUkAiM3Rf7ek7Z3juwBqwDTAKABwqh8n3IGHFzP2aOHzHSYZC9Y3SPniWw9P79wB/SQJTmGRheGOten+y8WBYLMKzvSjm4qPKKcqOLHWNrIaS75UpHD5AF1TG/sX5UoJSGc+QnM7Rpb9jWf09DY8v14+VmypGv0A+GstXF254m0AAAAASUVORK5CYII=</os:Image>
+<UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/ixquickus_videos.xml</UpdateUrl>
+<SearchForm>https://us2.ixquick.com/eng/videos.html</SearchForm>
+<os:Url type="text/html" method="POST" template="https://www.ixquick.com/do/metasearch.pl">
+  <os:Param name="query" value="{searchTerms}"/>
+  <os:Param name="cat" value="video"/>
+  <os:Param name="language" value="english"/>
+</os:Url><os:Url type="application/opensearchdescription+xml" method="GET" template="http://mycroft.mozdev.org/updateos.php/id0/ixquickus_videos.xml" rel="self">
+</os:Url>
+</SearchPlugin>
