@@ -1,0 +1,8 @@
+# -- THEME AUTO-WRITTEN DO NOT EDIT
+include "/home/bofe/.themes/Gurnbenktz/gtk-2.0/gtkrc"
+
+gtk-theme-name  = "Gurnbenktz"
+
+include "/home/bofe/.gtkrc.mine"
+
+# -- THEME AUTO-WRITTEN DO NOT EDIT

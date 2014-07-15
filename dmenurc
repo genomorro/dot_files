@@ -1,0 +1,9 @@
+normbordercolor="#2b2b2b"
+normbgcolor="#2b2b2b"
+normfgcolor="#8fb28f"
+selbordercolor="#666666"
+selbgcolor="#3f3f3f"
+selfgcolor="#f0dfaf"
+font="-*-Terminus-*-*-*-*-10-*-*-*-*-*-*-*"
+
+DMENU="dmenu -i -fn $font -nb $normbgcolor -nf $normfgcolor -sb $selbgcolor -sf $selfgcolor"
