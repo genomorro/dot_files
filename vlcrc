@@ -48,7 +48,7 @@
 #alsa-audio-channels=6
 
 # Software gain (float)
-alsa-gain=0.614125
+#alsa-gain=1.000000
 
 [amem] # Audio memory output
 
@@ -1503,7 +1503,7 @@ lastfm-password=
 [freetype] # Freetype2 font renderer
 
 # Font (string)
-#freetype-font=/usr/share/fonts/dejavu//DejaVuSans.ttf
+freetype-font=DejaVu Sans
 
 # Monospace Font (string)
 #freetype-monofont=/usr/share/fonts/dejavu//DejaVuSansMono.ttf
@@ -1608,7 +1608,7 @@ lastfm-password=
 #avcodec-codec=
 
 # Hardware decoding (string)
-#avcodec-hw=none
+avcodec-hw=any
 
 # Threads (integer)
 #avcodec-threads=0
@@ -2417,6 +2417,38 @@ lastfm-password=
 # Buffer Size (Seconds) (integer)
 #dash-buffersize=30
 
+[lua] # Lua interpreter
+
+# Lua interface (string)
+#lua-intf=dummy
+
+# Lua interface configuration (string)
+#lua-config=
+
+# Password (string)
+http-password=
+
+# Source directory (string)
+#http-src=
+
+# Directory index (boolean)
+#http-index=0
+
+# TCP command input (string)
+#rc-host=
+
+# CLI input (string)
+#cli-host=
+
+# Host (string)
+#telnet-host=localhost
+
+# Port (integer)
+#telnet-port=4212
+
+# Password (string)
+#telnet-password=
+
 [xcb_window] # X11 video window (XCB)
 
 # X11 display (string)
@@ -2596,10 +2628,81 @@ lastfm-password=
 # Bitrate override (integer)
 #sout-asf-bitrate-override=0
 
+[qt4] # Qt interface
+
+# Start in minimal view (without menus) (boolean)
+#qt-minimal-view=0
+
+# Systray icon (boolean)
+#qt-system-tray=1
+
+# Show notification popup on track change (integer)
+#qt-notification=1
+
+# Start VLC with only a systray icon (boolean)
+#qt-start-minimized=0
+
+# Pause the video playback when minimized (boolean)
+#qt-pause-minimized=0
+
+# Windows opacity between 0.1 and 1 (float)
+#qt-opacity=1.000000
+
+# Fullscreen controller opacity between 0.1 and 1 (float)
+#qt-fs-opacity=0.800000
+
+# Resize interface to the native video size (boolean)
+#qt-video-autoresize=1
+
+# Show playing item name in window title (boolean)
+#qt-name-in-title=1
+
+# Show a controller in fullscreen mode (boolean)
+#qt-fs-controller=1
+
+# Save the recently played items in the menu (boolean)
+#qt-recentplay=1
+
+# List of words separated by | to filter (string)
+#qt-recentplay-filter=
+
+# Embed the file browser in open dialog (boolean)
+#qt-embedded-open=0
+
+# Show advanced preferences over simple ones (boolean)
+#qt-advanced-pref=0
+
+# Show unimportant error and warnings dialogs (boolean)
+#qt-error-dialogs=1
+
+# Define the colors of the volume slider  (string)
+#qt-slider-colours=153;210;153;20;210;20;255;199;15;245;39;29
+
+# Ask for network policy at start (boolean)
+qt-privacy-ask=0
+
+# Define which screen fullscreen goes (integer)
+#qt-fullscreen-screennumber=-1
+
+# Load extensions on startup (boolean)
+#qt-autoload-extensions=1
+
+# Display background cone or art (boolean)
+#qt-bgcone=1
+
+# Expanding background cone or art. (boolean)
+#qt-bgcone-expands=0
+
+# Allow automatic icon changes (boolean)
+#qt-icon-change=1
+
+# Maximum Volume displayed (integer)
+#qt-max-volume=125
+
 [ncurses] # Ncurses interface
 
 # Filebrowser starting point (string)
-#browse-dir=
+browse-dir=/home/bofe/Videos
 
 [main] # main program
 
@@ -2628,7 +2731,7 @@ lastfm-password=
 #audio-desync=0
 
 # Audio resampler (string)
-#audio-resampler=
+audio-resampler=any
 
 # Replay gain mode (string)
 #audio-replay-gain-mode=none
@@ -2646,7 +2749,7 @@ lastfm-password=
 #audio-time-stretch=1
 
 # Audio output module (string)
-#aout=
+aout=any
 
 # Audio filters (string)
 #audio-filter=
@@ -2709,7 +2812,7 @@ lastfm-password=
 #mouse-hide-timeout=1000
 
 # Video snapshot directory (or filename) (string)
-#snapshot-path=
+snapshot-path=/home/bofe/Desktop
 
 # Video snapshot file prefix (string)
 #snapshot-prefix=vlcsnap-
@@ -2784,7 +2887,7 @@ lastfm-password=
 #deinterlace-mode=blend
 
 # Video output module (string)
-#vout=
+vout=any
 
 # Video filter module (string)
 #video-filter=
@@ -2799,7 +2902,7 @@ lastfm-password=
 #osd=1
 
 # Text rendering module (string)
-#text-renderer=
+text-renderer=any
 
 # Use subtitle file (string)
 #sub-file=
@@ -2838,7 +2941,7 @@ lastfm-password=
 #audio-language=
 
 # Subtitle language (string)
-#sub-language=
+sub-language=es
 
 # Audio track ID (integer)
 #audio-track-id=-1
@@ -2895,7 +2998,7 @@ cd-audio=/dev/sr0
 #http-host=
 
 # HTTP server port (integer)
-#http-port=8080
+http-port=6321
 
 # HTTPS server port (integer)
 #https-port=8443
@@ -2997,7 +3100,7 @@ cd-audio=/dev/sr0
 #encoder=
 
 # Access module (string)
-#access=
+access=any
 
 # Demux module (string)
 #demux=
@@ -3036,10 +3139,10 @@ cd-audio=/dev/sr0
 #sap-interval=5
 
 # Mux module (string)
-#mux=
+mux=any
 
 # Access output module (string)
-#access_output=
+access_output=any
 
 # Hop limit (TTL) (integer)
 #ttl=-1
@@ -3051,10 +3154,10 @@ cd-audio=/dev/sr0
 #dscp=0
 
 # Preferred packetizer list (string)
-#packetizer=
+packetizer=any
 
 # VoD server module (string)
-#vod-server=
+vod-server=any
 
 # Use a plugins cache (boolean)
 #plugins-cache=1
@@ -3102,7 +3205,7 @@ one-instance=1
 playlist-enqueue=1
 
 # Use media library (boolean)
-#media-library=0
+media-library=1
 
 # Display playlist tree (boolean)
 #playlist-tree=0
@@ -3114,7 +3217,7 @@ playlist-enqueue=1
 #auto-preparse=1
 
 # Album art policy (integer)
-#album-art=0
+album-art=2
 
 # Services discovery modules (string)
 #services-discovery=
@@ -3144,10 +3247,10 @@ playlist-enqueue=1
 intf=ncurses
 
 # Extra interface modules (string)
-#extraintf=
+extraintf=http
 
 # Control interfaces (string)
-#control=
+control=audioscrobbler
 
 # MouseWheel up-down axis Control (integer)
 #hotkeys-mousewheel-mode=0
