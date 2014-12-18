@@ -12,9 +12,10 @@ let (dir = get_home_directory()) {
   define_opensearch_webjump("down?", "down-for-everyone-or-just-me.xml");
   define_opensearch_webjump("duckduckgo", "duck-duck-go.xml");
   define_opensearch_webjump("emacswiki", "emacswiki.xml");
-  define_opensearch_webjump("foofind", "foofind.xml");
   define_opensearch_webjump("gentoo-wiki", "gentoo-wiki-en.xml");
   define_opensearch_webjump("github", "github.xml");
+  define_opensearch_webjump("gitorious", "gitorious-ssl.xml");
+  define_opensearch_webjump("goear", "goear.xml");
   define_opensearch_webjump("image", "picsearch.xml");
   define_opensearch_webjump("imdb", "imdb.xml");
   define_opensearch_webjump("ixquick", "ixquick.xml");
@@ -29,7 +30,7 @@ let (dir = get_home_directory()) {
   define_opensearch_webjump("wr-en-es", "wr-english-spanish.xml");
   define_opensearch_webjump("wr-english", "wr-english.xml");
   define_opensearch_webjump("wr-es-en", "wr-spanish-english.xml");
-  define_opensearch_webjump("wr-español", "wr-definicin.xml");
+  define_opensearch_webjump("wr-espa\xF1ol", "wr-definicin.xml");
   define_opensearch_webjump("youtube", "bsqueda-de-vdeos-en-youtube.xml");
   define_opensearch_webjump("userstyle", "userstylesorg.xml");
 }

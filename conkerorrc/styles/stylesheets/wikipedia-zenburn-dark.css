@@ -1,36 +1,50 @@
 @-moz-document domain("wikipedia.org") {
     * {
-		background-color: transparent !important;
-		color: #D4C4A9 !important;
-	}
-	body, div, form, table, tbody, tr, td, fieldset, ul, li, a, #content, #bodyContent {
-	    background-color: #404040 !important;
-	}
-	input, select, button, checkbox {
-	    background-color: #404040 !important;
-	}
-	a {
-	    color: #7F9F7F !important;
-	}
-	a:hover {
-	    background-color: #505050 !important;
-	}
-	a:visited {
-	    color: #CC9393 !important;
-	}
-	.thumb {
-	    border-color: #404040 !important;
-	}
-	div.vectorTabs, div.vectorTabs ul, div.vectorTabs ul > li, div.vectorTabs ul > li > a {
-	    background-color: #404040 !important;
-	    background-image: none !important;
-	    border: none !important;
-	}
-	img {
-	    background-color: #ffffff !important;
-	}
-	code, pre, pre span, code span {
-	    color: #CC9393 !important;
-	    background: #505050 !important;
-	}
+	background-color: transparent !important;
+	color: #DCDCCC !important;	
+    }
+    body, div, form, table, tbody, tr, td, fieldset, ul, li, a, #content, #bodyContent {
+	background-color: #3F3F3F !important;
+    }
+    input, select, button, checkbox {
+	background-color: #3F3F3F !important;
+    }
+    a {
+	color: #7F9F7F !important;
+    }
+    a:visited {
+	color: #DCA3A3 !important;
+    }
+    a.new {
+	color: #8CD0D3 !important;
+    }
+    a.new:visited {
+	color: #DC8CC3 !important;
+    }
+    .thumb {
+	border-color: #3F3F3F !important;
+    }
+    div.vectorTabs, div.vectorTabs ul, div.vectorTabs ul > li, div.vectorTabs ul > li > a {
+	background-color: #3F3F3F !important;
+	background-image: none !important;
+	border: none !important;
+    }
+    img {
+	background-color: #3F3F3F !important;
+    }
+    .kw3 {
+	color: #94C0F3 !important;
+    }
+    .me1 {
+	color: #C3BF9F !important;
+    }
+    .kw2 {
+	color: #FFFFFF !important;
+    }
+    .st0 {
+	color: #CC9393 !important;
+    }
+    .br0 {
+	color: #7F9F7F !important;
+    }
 }

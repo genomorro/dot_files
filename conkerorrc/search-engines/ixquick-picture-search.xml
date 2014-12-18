@@ -7,6 +7,6 @@
 <UpdateUrl>http://mycroft.mozdev.org/update.php/id2/ixquick_pic.src</UpdateUrl>
 <IconUpdateUrl>http://mycroft.mozdev.org/update.php/id2/ixquick_pic.png</IconUpdateUrl>
 <SearchForm>http://www.ixquick.com/</SearchForm>
-<os:Url type="text/html" method="GET" template="http://ixquick.com/do/metasearch.pl?cat=web&amp;cat=pics&amp;cmd=process_search&amp;language=english&amp;query={searchTerms}&amp;sourceid=mozilla-search">
+<os:Url type="text/html" method="GET" template="http://ixquick.com/do/metasearch.pl?cat=web&amp;cat=pics&amp;cmd=process_search&amp;language=english&amp;query={searchTerms}&amp;sourceid=mozilla-search" resultDomain="ixquick.com">
 </os:Url>
 </SearchPlugin>

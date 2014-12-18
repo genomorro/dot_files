@@ -1,4 +1,4 @@
-/* Sun Jul  6 21:01:38 2014 */
+/* Sun Oct 12 01:18:39 2014 */
 /* Import all CSS based ad blockers */
 
 @import url("http://www.gozer.org/mozilla/ad_blocking/css/ad_blocking.css");
@@ -22,8 +22,12 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
 @-moz-document domain("youtube.com") {
-    #watch-channel-brand-div {
+    #watch-channel-brand-div,
+    .video-list-item {
         display: none !important;
+    }
+    .video-list-item.related-list-item {
+        display: block !important;
     }
 }
 
@@ -282,4 +286,22 @@ a[title="Click to Continue > by Text-Enhance"] {
         display: none !important;
         width: 0 !important;
         height: 0 !important;}
+}
+
+/* https://userstyles.org/styles/49628/remove-ads-yahoo-mail-2013 */
+
+@-moz-document domain("mail.yahoo.com") {
+  
+#theAd, #theMNWAd, #slot_MON, #slot_LREC, #slot_MIP, #slot_MON_sent, .darla, .ch_mod, .gxBoom, .boom, #trendmastr-main, #masSearchAd, #slot_MB, #slot_mbrec, .mb-msg-read-img-ad, #mobilizer {
+display:none!important;
+visibility:hidden!important;
+}
+#shellcontent {
+right: 0px!important;
+}
+.with-ads .layoutfixer .c3 {
+width:0!important;/*this hide ads when you choose Basic from mail option*/
+}
+#main, #yucs, #yuhead-bucket {
+max-width: 100%;/*default width is 1630px*/
 }

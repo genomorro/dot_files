@@ -8,3 +8,7 @@ interactive("viewmarks", "Open ViewMarks",
 interactive("fireftp", "Open FireFTP",
 	    "find-url-new-buffer",
 	    $browser_object = "chrome://fireftp/content/fireftp.xul");
+
+
+//adblockplus
+//require("adblockplus");

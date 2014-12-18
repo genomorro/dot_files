@@ -7,11 +7,11 @@
 <UpdateUrl>https://startpage.com/toolbar/searchbar/es/startpage_ff_secure_es.xml</UpdateUrl>
 <IconUpdateUrl>https://startpage.com/toolbar/searchbar/es/startpage.png</IconUpdateUrl>
 <SearchForm>https://startpage.com/</SearchForm>
-<os:Url type="text/html" method="POST" template="https://startpage.com/do/search">
+<os:Url type="text/html" method="POST" template="https://startpage.com/do/search" resultDomain="startpage.com">
   <os:Param name="query" value="{searchTerms}"/>
   <os:Param name="cat" value="web"/>
   <os:Param name="pl" value="ff"/>
   <os:Param name="language" value="espanol"/>
-</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="https://startpage.com/cgi-bin/csuggest?output=json&amp;pl=ff&amp;lang=espanol&amp;query={searchTerms}">
+</os:Url><os:Url type="application/x-suggestions+json" method="GET" template="https://startpage.com/cgi-bin/csuggest?output=json&amp;pl=ff&amp;lang=espanol&amp;query={searchTerms}" resultDomain="startpage.com">
 </os:Url>
 </SearchPlugin>

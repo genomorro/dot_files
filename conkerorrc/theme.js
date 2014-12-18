@@ -5,13 +5,17 @@
 
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/ad-block.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/arch.css');
+register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/darker-facebook.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/diaspora.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/emacswiki-zenburn.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/github-zenburn.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/google-dark.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/no-gtk.css');
+register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/grooveshark.css');
+register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/imdb.css');
+register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/zenburn-gtk.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/stackoverflow.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/startpage.css');
+register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/superuser.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/txt-zenburn.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/userstyle-zenburn.css');
 register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/wikipedia-zenburn-dark.css');
@@ -22,9 +26,9 @@ var global_css_registered=false;
 function darken_page(I){
     global_css_registered=global_css_registered ? false : true;
     if(global_css_registered){
-	register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/general-zenburn.css');
+	register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/no-gtk.css');
     }else{
-	unregister_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/general-zenburn.css');
+	unregister_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/no-gtk.css');
     }
 }
 interactive("darken-page", "Darken the page in an attempt to save your eyes.", darken_page);

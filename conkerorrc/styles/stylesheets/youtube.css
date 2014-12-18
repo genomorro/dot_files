@@ -1,12 +1,12 @@
-/* Created by PanosBabo on 9 March 2012, last updated on 12/June/2014*/
+/* Created by PanosBabo on 9 March 2012, last updated on 04/December/2014 */
 
 @namespace url(http://www.w3.org/1999/xhtml);
 
 @-moz-document domain(youtube.com)
 {
 
-body, #content, #watch-headline-container, #watch-video-container, #watch-main-container, .footer .yt-uix-pager, .splitter, #mymedia #view-pane .settings, #mymedia #view-pane .actions, #mymedia #table .video.even, #mymedia #table .video-details.even, #mymedia #table .video.odd, #mymedia #table .video-details.odd, #mymedia #view-pane .footer, #mymedia #table, #no-playlists, .searchFooterBox .yt-uix-pager, input:not([class*="html5"]), .feedmodule-anchor, textarea, #record-tab-content, .vert-bar, .message td, .msg-subject-open .subject, .shows-table, .shows-table .alt td, #google_companion_ad_div, #watch-show-brand-div, #watch-channel-brand-div, #user_playlist_navigator, #main-channel-content, .watch-next-list-actions, .ux-thumb-96, .multiple-promoted, #quicklist-bar-container, #vm-pageheader-container h1, #vm-page-subheader, #vm-video-actions-inner, #yt-admin h1, #folder_title, #theForm *, #footer-container, #vm-playlist-header, #page.watch-branded #watch-sidebar, #yt-admin-content h2, #mymedia #table, #yt-admin #table, #page, #watch-description .expand, #watch-description .collapse, #yt-admin.recommendations, #watch-owner-container, #annotator-div, .yt-uix-button-menu-item, .browse-bg-gradient, #page.search-movies-browse #content-container, .overlay, #help-target, #watch7-content, #playlist-pane-container .video-tile:hover,#playnav-title-bar,#video-sidebar .video-list-item:hover,#watch-sidebar .video-list-item a:hover, .metadata-container,
-#guide-container, #upload-item-0, .video-settings-tag-chips-container, .vk-btn, body #footer-container, .subtab-content, #builder-preview-pane, body>iframe+table table, .feed-promo, #yt-admin-content, .account-container, #watch7-action-panel-footer, .yt-alert-panel, .lohp-shelf-cell-container:hover, .guide-module-toggle-label, .guide-context-item.context-playing:hover a, a.context-back-link.yt-uix-sessionlink, #watch7-video-container, .yt-uix-form-input-select-element, #watch-response, .metadata-tab, #vm-pagination, .vm-video-metrics a:hover, #feed-promo-returning-user-no-subs, .site-left-aligned #footer-hh-container, #creator-editor-container, tr.ab-users:nth-child(2n+1), .ab-midpane, #main-content .upload-item, .site-left-aligned #footer-container, #player, #clickYoutubeD_dropDownSpan, .related-channels-editor:hover, .secondary-header-contents, #page-container, #player-legacy, #appbar-guide-menu, .id-revert-buttons-container, #bottom-notes-section, .timedtext-content, #non-appbar-vm-video-actions-bar, .howto-promo-container, .channel-ad-fan-finder-banner, .downloadLinks, .menuArrows, LI.feed-item-container, .yt-card, #masthead-expanded-container.with-sandbar, #masthead-appbar, .yt-creator-tip-item-container, .yt-dialog-bg, .yt-uix-overlay-bg, .yt-dialog-footer, #comments-view .comment:hover, .yt-uix-sessionlink
+body, #content, #watch-headline-container, #watch-video-container, #watch-main-container, .footer .yt-uix-pager, .splitter, #mymedia #view-pane .settings, #mymedia #view-pane .actions, #mymedia #table .video.even, #mymedia #table .video-details.even, #mymedia #table .video.odd, #mymedia #table .video-details.odd, #mymedia #view-pane .footer, #mymedia #table, #no-playlists, .searchFooterBox .yt-uix-pager, input:not(.yt-uix-form-input-checkbox), .feedmodule-anchor, textarea, #record-tab-content, .vert-bar, .message td, .msg-subject-open .subject, .shows-table, .shows-table .alt td, #google_companion_ad_div, #watch-show-brand-div, #watch-channel-brand-div, #user_playlist_navigator, #main-channel-content, .watch-next-list-actions, .ux-thumb-96, .multiple-promoted, #quicklist-bar-container, #vm-pageheader-container h1, #vm-page-subheader, #vm-video-actions-inner, #yt-admin h1, #folder_title, #theForm *, #footer-container, #vm-playlist-header, #page.watch-branded #watch-sidebar, #yt-admin-content h2, #mymedia #table, #yt-admin #table, #page, #watch-description .expand, #watch-description .collapse, #yt-admin.recommendations, #watch-owner-container, #annotator-div, .yt-uix-button-menu-item, .browse-bg-gradient, #page.search-movies-browse #content-container, .overlay, #help-target, #watch7-content, #playlist-pane-container .video-tile:hover,#playnav-title-bar,#video-sidebar .video-list-item:hover,#watch-sidebar .video-list-item a:hover, .metadata-container,
+#guide-container, #upload-item-0, .video-settings-tag-chips-container, .vk-btn, body #footer-container, .subtab-content, #builder-preview-pane, body>iframe+table table, .feed-promo, #yt-admin-content, .account-container, #watch7-action-panel-footer, .yt-alert-panel, .lohp-shelf-cell-container:hover, .guide-module-toggle-label, .guide-context-item.context-playing:hover a, a.context-back-link.yt-uix-sessionlink, #watch7-video-container, .yt-uix-form-input-select-element, #watch-response, .metadata-tab, #vm-pagination, .vm-video-metrics a:hover, #feed-promo-returning-user-no-subs, .site-left-aligned #footer-hh-container, #creator-editor-container, tr.ab-users:nth-child(2n+1), .ab-midpane, #main-content .upload-item, .site-left-aligned #footer-container, #player, #clickYoutubeD_dropDownSpan, .related-channels-editor:hover, .secondary-header-contents, #page-container, #player-legacy, #appbar-guide-menu, .id-revert-buttons-container, #bottom-notes-section, .timedtext-content, #non-appbar-vm-video-actions-bar, .howto-promo-container, .channel-ad-fan-finder-banner, .downloadLinks, .menuArrows, LI.feed-item-container, .yt-card, #masthead-expanded-container.with-sandbar, #masthead-appbar, .yt-creator-tip-item-container, .yt-dialog-bg, .yt-uix-overlay-bg, .yt-dialog-footer, #comments-view .comment:hover, .yt-uix-sessionlink, #theater-background, .yt-masthead-account-picker-option, .yt-masthead-picker-footer
 {
     background: black !important;
 }
@@ -17,12 +17,11 @@ input[type="text"], textarea
 }
 
 .watch-ppv-vid, .video-list-item-link:hover, .video-list-item-link:hover, #watch-comments-core .current, #watch-comments-core .current .wrapper, .promoted-videos, #search-duplicates-message, #fyf_container, .yt-uix-button-menu-item:hover, .browse-categories-side, #browse-video-channels-modifiers, .main-tabs-spotlight-inner .video-entry, .hot-trends-cloud-inner-area, .yt-menubutton-menu li a:hover, #mymedia #list-pane .subfolder.selected, .yt-menulink-menu li a:hover, .yt-menulink-menu span a:hover, .yt-suggest-selected .yt-suggest-left, .yt-suggest-selected .yt-suggest-right, .yt-suggest-selected .grayText, .yt-suggest-close, .gray-tab-box-header, .groupnamecont.selected, #movie-promo-body, .watch-pyv-vid, #starting-box, .upload-inner-box, .outer-box-bg-color, .cpline:hover, div[class="watch-active-list-body-collapsed hover"] a, a[class="video-list-item-link selected"], .vm-vertical-nav a.selected, #folderlinks a.selected, .playnav-item .selector, .outer-box-bg-color, .outer-box, .yt-uix-hovercard-card-body, .ppv-promoted-videos, .featured-result, #watch-description-extra-info .link-list a:hover, #watch-description-extra-info .full-link a:hover, #spotlight-list .playlist-badge, #recent-column .playlist-badge, .show-onebox .left-pane, span.yt-badge-std, a.yt-badge-std, #watch-customize-embed-size .radio-selected .watch-embed-radio-box, .watch-embed-radio-box, .comment:hover, #personalized-sub-recs .channel-cell:hover, #ppv-container, #vm-video-list-container .selected,
-#post-channel-comment-message, .gssb_m tr:hover *, .gssb_i td, .suggested-channels-v2, .guide-subscriptions-upsell, #kbd, #vm-bulk-actions-selection, .comment-settings-header, #dialog .header, .vm-video-item.vm-member-item.selected
-{
+#post-channel-comment-message, .gssb_m tr:hover *, .gssb_i td, .suggested-channels-v2, .guide-subscriptions-upsell, #kbd, #vm-bulk-actions-selection, .comment-settings-header, #dialog .header, .vm-video-item.vm-member-item.selected, .action-panel-trigger.yt-ui-menu-item:hover {
     background: #222222 !important;
 }
 
-.subheader, .yt-lockup2:hover, #link-gplus-lb, .before-after-container, .before-container, #link-gplus-lb .dialog-title, #link-gplus-lb .dialog-header, #subscription-manager-container .even td, .creator-editor-nav, tr.ab-users, .selection-list-item.yt-uix-expander-head.playlist.select-on-click.selected, .video-picker-item:hover, #dftpop-content.content, .dashboard-widget-header:hover, #vm-bulk-actions-editing-header, .vm-beauty-view .vm-video-item-content, #help #dialog, #help .suggestions-container, #inproduct-guide-modal
+.subheader, .yt-lockup2:hover, #link-gplus-lb, .before-after-container, .before-container, #link-gplus-lb .dialog-title, #link-gplus-lb .dialog-header, #subscription-manager-container .even td, .creator-editor-nav, tr.ab-users, .selection-list-item.yt-uix-expander-head.playlist.select-on-click.selected, .video-picker-item:hover, #dftpop-content.content, .dashboard-widget-header:hover, #vm-bulk-actions-editing-header, .vm-beauty-view .vm-video-item-content, #help #dialog, #help .suggestions-container, #inproduct-guide-modal, .yt-uix-kbd-nav.yt-uix-kbd-nav-list, .share-email-preview-container, .yt-uix-menu-content.yt-ui-menu-content:not(.yt-uix-menu-content-external)
 {background-color: #111 !important;}
 
 #howto-addto, .guide-context-item a:hover, .guide-context-item.context-playing a, .item-badge-label, .yt-badge, .yt-uix-dragdrop-drag-handle.pl-video-handle.yt-valign, .pl-video:hover .yt-uix-dragdrop-drag-handle, .yt-uix-dragdrop-cursor-follower, .message.closed.m_highlight, .message.m_highlight.open
@@ -31,7 +30,7 @@ input[type="text"], textarea
 .dashboard-widget-header, .dashboard-widget-content, .dashboard-widget-padded-content, .dashboard-widget.notification, .distiller-first-time-promo .content, #watch7-creator-bar, .yt-uix-dragdrop-cursor-follower
 {background: #222 !important;border-color: #555 !important;}
 
-div.yt-uix-button-menu > table, .vm-quick-edit-video, .vm-quick-watch-video, .vm-quick-delete-video
+div.yt-uix-button-menu > table, .vm-quick-edit-video, .vm-quick-watch-video, .vm-quick-delete-video, #watch8-action-buttons .yt-uix-button:hover, #appbar-nav .yt-uix-button.yt-uix-button-epic-nav-item:hover
 {
     background: #444444 !important;
 }
@@ -42,7 +41,7 @@ div.yt-uix-button-menu > table, .vm-quick-edit-video, .vm-quick-watch-video, .vm
 }
 
 #masthead-search.consolidated-form input, body, #watch-headline-title, .watch-expander-head, .yt-uix-pager .yt-uix-button, .video-list-item .stat, .video-description, .show-description, .episode-description, .channel-description, .movie-description, .show-long-description, .show-short-description, .show-mini-description, .video-facets, .channel-facets, .playlist-facets, .playlist-main-stats, .movie-facets, .trailer-facets, .show-facets, .mini-list-view .video-view-count, .mini-list-view .rental-price, .mini-list-view .video-username, #search-duplicates-message, .video-stat span, .feedmodule-subnull-txt, .homepage-whats-new-content, textarea, .grayText, .groupnamecont, .message td, .metadata, .inner-box-colors, .inner-box, .vm-video-list .vm-video-desc, .vm-video-metrics dd, .homepage-already-opted-in-promo, .feedmodule-ts, .yt-video-box, .new-snippets .video-view-count, .new-snippets .playlist-video-count, .new-snippets .channel-video-count, .video-count, .comment .metadata, .comment .metadata-inline, .video-username, .shmoovies-list-container .show-rental-facets .rental-price, .shmoovies-list-container .movie-rental-facets .rental-price, .shmoovies-list-container .popular-show-list .show-cell .show-extrainfo, .yt-uix-hovercard, .yt-uix-hovercard-card .description, #search-base-div, #vpl-description, .yt-browse-section-header ol, #watch-uploader-info, #watch-description-extra-info li, #watch-description-extra-info .watch-likes-dislikes, #watch-description-extra-info .watch-likes-dislikes .dislikes,
-#videos-main #recent-column .playlist-video-count, span.yt-badge-std, #yt-admin-recommendations p, #homepage-whats-new .entry, .subscription-menu-form, .subscription-recommendations, .instructions span, .search-refinements-block-title, .username-prepend, .yt-alert-content, #masthead-expanded .list-title, .yt-uix-button-content, .video-list-item .stat, .watch-view-count, .comments-section h4, .watch-module-body h4, .message.unread *, #watch7-headline .yt-uix-expander-head, #watch-headline-show-title, #watch-uploader-info strong, #eow-date.watch-video-date 
+#videos-main #recent-column .playlist-video-count, span.yt-badge-std, #yt-admin-recommendations p, #homepage-whats-new .entry, .subscription-menu-form, .subscription-recommendations, .instructions span, .search-refinements-block-title, .username-prepend, .yt-alert-content, #masthead-expanded .list-title, .yt-uix-button-content, .video-list-item .stat, .watch-view-count, .comments-section h4, .watch-module-body h4, .message.unread *, #watch7-headline .yt-uix-expander-head, #watch-headline-show-title, #watch-uploader-info strong, #eow-date.watch-video-date, #eow-title
 {
     color: #cccccc !important;
 }
@@ -52,7 +51,7 @@ a, .video-list-item .title, .yt-uix-pager .yt-uix-pager-selected, .yt-uix-expand
     color: white !important;
 }
 
-#watch-discussion, .branded-page-v2-container.no-top-row .branded-page-v2-primary-col, .branded-page-v2-container.has-top-row, .editor-content, .tab-bg, #inline-editor-main, #mymedia, .primary-col, body #footer-hh-container, .feed-item-container, .branded-page-v2-primary-col, .branded-page-v2-col-container.clearfix, .branded-page-v2-col-container-bottom-border, #gh-checklist, .todo-item, .yt-dialog-fg, .yt-uix-overlay-actions, .branded-page-v2-secondary-col, #masthead-appbar-container, #dashboard-header, #yt-masthead-user-card-actions, .live-welcome-intro, .guide-flyout.guide-flyout-visibility
+#watch-discussion, .branded-page-v2-container.no-top-row .branded-page-v2-primary-col, .branded-page-v2-container.has-top-row, .editor-content, .tab-bg, #inline-editor-main, #mymedia, .primary-col, body #footer-hh-container, .feed-item-container, .branded-page-v2-primary-col, .branded-page-v2-col-container.clearfix, .branded-page-v2-col-container-bottom-border, #gh-checklist, .todo-item, .yt-dialog-fg, .yt-uix-overlay-actions, .branded-page-v2-secondary-col, #masthead-appbar-container, #dashboard-header, #yt-masthead-user-card-actions, .live-welcome-intro, .guide-flyout.guide-flyout-visibility, .yt-ui-menu-content
 {
 background: black !important;
 border-color: black !important;
@@ -71,8 +70,18 @@ border-color: black !important;
 }
 #logo {z-index: 1; position:relative;}
 
+/*New improvements*/
+.yt-ui-ellipsis:before {content: none !important;}
+#watch8-action-buttons, .yt-card .yt-uix-tabs, #appbar-guide-menu {border: none !important;}
+.yt-uix-button-expander.yt-uix-expander-head.yt-uix-expander-collapsed-body,
+.yt-uix-button-expander.yt-uix-expander-head.yt-uix-expander-body, #watch-more-related-button
+{width: auto !important; margin: auto !important;}
+#watch-like-dislike-buttons .yt-uix-button  {padding-right: 7px !important;}
 #message_reading {background-color: black !important;}
-
+#appbar-guide-menu {top: 7px !important;}
+.yt-uix-tabs .yt-uix-button-group .yt-uix-button {padding-top: 3px !important;}
+/*End*/
+    
 .pl-header-privacy-everyone {background-image: url("http://i.imgur.com/k4yhpM1.png") !important;
 background-position: 0px -378px !important;}
 .pl-header-privacy-limited-sharing {background-image: url("http://i.imgur.com/k4yhpM1.png") !important;
@@ -81,6 +90,9 @@ background-position: -49px -1404px !important;}
 background-position: -51px -203px !important;}
 
 /*New layout*/
+
+#page-container{margin-top:10px !important;}
+
 #appbar-nav .yt-uix-button.yt-uix-button-epic-nav-item
 {padding-left: 8px !important; padding-right: 8px !important; height: 33px !important; border-radius: 2px !important;}
 #appbar-nav .yt-uix-button-content {bottom: 5px !important; position: relative;}
@@ -108,6 +120,8 @@ background-position: -51px -203px !important;}
 }
 #gs_id50 {margin-top: -1px !important; background: black !important; border-color: #444 !important;}
 }
+@media screen and (-moz-images-in-menus:0) {#masthead-search-term {margin:auto !important;}}
+@media screen and (-webkit-min-device-pixel-ratio:0) {#masthead-search-term {height:auto !important;}}
 /*End*/
 
 .yt-uix-form-input-checkbox-element, #upload-btn, #appbar-settings-button, #appbar-guide-button-notification-check {border-radius: 2px !important;}
@@ -145,6 +159,7 @@ word-spacing:-999px;
 letter-spacing: -999px; 
 }
 #download-youtube-video-button-eytd.yt-uix-button-text:after {position: relative; top: 1px; left: -25px; color: #999; content: "Download" !important;}
+#download-youtube-video-button-eytd {position: relative; top: -2px !important;}
 /*End*/
 
 .yt-uix-button-playlist-remove-item {width:20px!important;}
@@ -163,7 +178,7 @@ height: 30px !important;
 width: 23px;
 }
 
-.action-panel-trigger, #channel-navigation-menu li, .html5-compatibility-table li
+#channel-navigation-menu li, .html5-compatibility-table li, #watch8-action-buttons .yt-uix-button, .watch8 #action-panel-dismiss:hover , .yt-uix-tabs .yt-uix-button-group .yt-uix-button
 {
 -moz-appearance: none;
 border-width: 0px !important; height: 30px !important;
@@ -186,10 +201,10 @@ a.yt-uix-button.yt-uix-pager-button.yt-uix-button-toggled, .yt-uix-button-group.
 .yt-uix-sessionlink.yt-uix-button-epic-nav-item.yt-uix-button-size-default.yt-uix-button-empty, .content-region, .ad-div, #yt-hitchhiker-feedback, .yt-uix-card-body-arrow-vertical, #clickYoutubeD_downloadArrow, #comments-view hr
 {display: none !important;}
 
-.watch-card, #watch7-sidebar#watch7-sidebar, #watch7-sidebar, .vm-video-item.vm-label-item, .vm-video-item.vm-member-item, .channel-layout-two-column .tab-content-body, body #masthead-expanded-container, .feed-item-container, .feed-author-bubble, .yt-uix-clickcard-target.yt-uix-button.yt-uix-button-link, .filter-content, #watch7-player-unavailable, #link-gplus-lb .dialog-header, .yt-picker-content button, #channel-search.expanded, .watch-playlists-drawer .selected, .yt-ui-ellipsis, .yt-uix-ellipsis, .yt-uix-expander-ellipsis, .g-hovercard.yt-uix-sessionlink.yt-user-name, .vtitle .yt-uix-sessionlink, .subscription-title.yt-uix-sessionlink, #watch-appbar-playlist .playlist-title a, #watch-appbar-playlist .author-attribution a
+.watch-card, #watch7-sidebar#watch7-sidebar, #watch7-sidebar, .vm-video-item.vm-label-item, .vm-video-item.vm-member-item, .channel-layout-two-column .tab-content-body, body #masthead-expanded-container, .feed-item-container, .feed-author-bubble, .yt-uix-clickcard-target.yt-uix-button.yt-uix-button-link, .filter-content, #watch7-player-unavailable, #link-gplus-lb .dialog-header, .yt-picker-content button, #channel-search.expanded, .watch-playlists-drawer .selected, .yt-ui-ellipsis, .yt-uix-ellipsis, .yt-uix-expander-ellipsis, .g-hovercard.yt-uix-sessionlink.yt-user-name, .vtitle .yt-uix-sessionlink, .subscription-title.yt-uix-sessionlink, #watch-appbar-playlist .playlist-title a, #watch-appbar-playlist .author-attribution a, .yt-dialog-base .yt-dialog-header
 {background: transparent !important;}
 
-.pl-video.yt-uix-tile, .pl-header.branded-page-box, #appbar-guide-menu.appbar-menu, .search-header, .guide-section-separator, .vm-video-metrics, .vm-video-actions-inner, .vm-video-item-content, .vm-video-item.vm-member-item, .vm-video-item.vm-label-item, #guide-container-expanded .guide-item:hover, #guide-container-expanded .guide-item.guide-selected, .feed-item-container, .yt-playall-link-default
+.pl-video.yt-uix-tile, .pl-header.branded-page-box, #appbar-guide-menu.appbar-menu, .search-header, .guide-section-separator, .vm-video-metrics, .vm-video-actions-inner, .vm-video-item-content, .vm-video-item.vm-member-item, .vm-video-item.vm-label-item, #guide-container-expanded .guide-item:hover, #guide-container-expanded .guide-item.guide-selected, .feed-item-container, .yt-playall-link-default, .subscription-item, #yt-uix-videoactionmenu-menu, .playlists.yt-uix-scroller
 {
 border-color: #363636 !important;
 }
@@ -277,7 +292,7 @@ background-color: #fff !important;
     border: 1px #333333 solid !important;
 }
 
-.yt-uix-form-input-text:not(:focus), .lohp-medium-shelves-container, .lohp-blog-headline, .lohp-large-shelf-container, .lohp-newspaper-shelf, .lohp-shelf-cell-container, #show-content th, .yt-uix-hovercard-card-border, .page-tabs a, span.yt-badge-std, a.yt-badge-std, .yt-uix-button-menu, h4, .module-title, .yt-uix-expander-head, .subscription-menu-expandable, .inline-edit-more, #annotator-select-menu .yt-uix-button-menu-item td, #playlist-bar-bar-container, .yt-menubutton .yt-menubutton-btn, .yt-menubutton .yt-menubutton-arr, .yt-uix-button, #watch-channel-discoverbox, .watch-expander-head, #watch-actions-area, #content.watch-wide #watch-sidebar .watch-active-list .watch-module-head, #content.watch-wide #watch-sidebar .watch-active-list .watch-module-body, .search-setting-inner, #watch-sidebar .watch-module-expandable .watch-module-head, .watch-module-body, #page #masthead-container, .outer-box-bg-as-border, #upload-interface, .upload-outer-box, #baseDiv #side-column, .action-bar-ratings-stats, .watch-extra-info, div[style*="background-color: rgb(238, 238, 238)"]
+.yt-uix-form-input-text:not(:focus), .lohp-medium-shelves-container, .lohp-blog-headline, .lohp-large-shelf-container, .lohp-newspaper-shelf, .lohp-shelf-cell-container, #show-content th, .yt-uix-hovercard-card-border, .page-tabs a, span.yt-badge-std, a.yt-badge-std, .yt-uix-button-menu, h4, .module-title, .yt-uix-expander-head, .subscription-menu-expandable, .inline-edit-more, #annotator-select-menu .yt-uix-button-menu-item td, #playlist-bar-bar-container, .yt-menubutton .yt-menubutton-btn, .yt-menubutton .yt-menubutton-arr, .yt-uix-button, #watch-channel-discoverbox, .watch-expander-head, #watch-actions-area, #content.watch-wide #watch-sidebar .watch-active-list .watch-module-head, #content.watch-wide #watch-sidebar .watch-active-list .watch-module-body, .search-setting-inner, #watch-sidebar .watch-module-expandable .watch-module-head, .watch-module-body, #page #masthead-container, .outer-box-bg-as-border, #upload-interface, .upload-outer-box, #baseDiv #side-column, .action-bar-ratings-stats, .watch-extra-info, div[style*="background-color: rgb(238, 238, 238)"], #yt-uix-videoactionmenu-menu
 {
     border-color: #444444 !important;
 }
@@ -442,7 +457,7 @@ border-color: black !important;
     border-radius: 3px !important;
 }
 .esw.eswd.qk.Gc, .Dg.Ut, .Dt.wu, .IO, .KPc.tQb, .sk {border-color: #555 !important;}
-.Hma .Pga.d-A:hover, .zVeWr.FnlLyd:hover, .d-k-l.b-c.b-c-R:not(.vSH9Nc):hover, .Kza, .IO, .esw.eswd.qk.Gc, .Dg.Ut
+.Hma .Pga.d-A:hover, .zVeWr.FnlLyd:hover, .d-k-l.b-c.b-c-R:not(.vSH9Nc):hover, .Kza, .IO, .esw.eswd.qk.Gc, .Dg.Ut, .d-s.L5.r0:hover
 {background: #444 !important;}
 .KPc.tQb {background: #333 !important;}
 .G-q-B, .YH.WD.d-r, .WD.d-r, .G-q, .G-q-O, .QOb, .ROb, .g-h-f-vc-B, .g-h-f-V-Lb, .zta.f4a, .ki.ve,
@@ -461,6 +476,7 @@ a:visited, a:visited font, a:visited .title, a:visited span, .zbHZJb, .d-s.nq, .
 .Kub .vwa {background: #555 !important; border-radius: 5px !important;}
 .swb.vac.vwa {padding-right: 10px !important;}
 .G-q-Ya {background: rgba(0,0,0,1) !important;}
+.d-s.L5.r0, .dP.PA {width: auto !important; margin: auto !important;}
 .RQb, .SQb {background-image: url('http://i.imgur.com/NX77Deg.png') !important;}
 }
 @-moz-document regexp("https://plus\.google\.com/.*/notifications/frame\?.*") {

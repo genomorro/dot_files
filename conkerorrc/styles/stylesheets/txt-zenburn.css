@@ -11,7 +11,7 @@
  pre
  {
    font-family: 'lucida console', monospace !important;
-   line-height: 1.5em !important;
+   line-height: 1.0em !important;
  }
 
 html >
@@ -73,7 +73,7 @@ html >
  }
 .attribute-value
  {
-   color: #604b8a !important;
+   color: #94bff3 !important;
  }
 .end-tag,
 .start-tag

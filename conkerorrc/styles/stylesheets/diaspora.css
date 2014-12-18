@@ -292,4 +292,10 @@ domain("lksnyder0.mooo.com"){
     .details, .timeago, .post_scope, .info, .via, .post_initial_info {
 	color: #f0dfaf !important;
     }
+    .collapsible .notification-message {
+	color: #999 !important;
+    }
+    .view_all {
+        background-color: #506070 !important;
+    }
 }
