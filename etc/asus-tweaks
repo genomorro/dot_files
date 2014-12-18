@@ -1,0 +1,41 @@
+#!/sbin/runscript
+# Copyright 2008-2013 Gentoo Fundation
+# Distributed under the terms of the GNU General Public License v2 or later
+
+description="Tweaks for Asus UX32VD"
+
+depend() {
+    after acpid
+}
+
+start() {
+    echo min_power > /sys/class/scsi_host/host0/link_power_management_policy
+    echo min_power > /sys/class/scsi_host/host1/link_power_management_policy
+    echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
+    echo min_power > /sys/class/scsi_host/host3/link_power_management_policy
+    echo min_power > /sys/class/scsi_host/host4/link_power_management_policy
+    echo min_power > /sys/class/scsi_host/host5/link_power_management_policy
+    echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+    echo auto | tee /sys/bus/{pci,i2c}/devices/*/power/control > /dev/null
+
+    for i in /sys/bus/usb/devices/*/power/autosuspend; do
+     	echo 1 | tee $i > /dev/null
+    done
+
+}
+
+stop() {
+    echo max_performance > /sys/class/scsi_host/host0/link_power_management_policy
+    echo max_performance > /sys/class/scsi_host/host1/link_power_management_policy
+    echo max_performance > /sys/class/scsi_host/host2/link_power_management_policy
+    echo max_performance > /sys/class/scsi_host/host3/link_power_management_policy
+    echo max_performance > /sys/class/scsi_host/host4/link_power_management_policy
+    echo max_performance > /sys/class/scsi_host/host5/link_power_management_policy
+    echo 500 > /proc/sys/vm/dirty_writeback_centisecs
+    echo on | tee /sys/bus/{pci,i2c}/devices/*/power/control > /dev/null
+
+    for i in /sys/bus/usb/devices/*/power/autosuspend; do
+     	echo 0 | tee $i > /dev/null
+    done
+
+}

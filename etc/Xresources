@@ -1,0 +1,33 @@
+*customization:			-color
+*faceName:			Terminus
+*faceSize:			10
+*cursorColor:			#c3bf9f
+*pointerColor:			#c3bf9f
+
+! Zenburn
+*foreground:			#dcdccc
+*background:			#3f3f3f
+*color0:			#000d18
+*color1: 			#a35050
+*color2: 			#7f9f7f
+*color3: 			#dfaf8f
+*color4: 			#506070
+*color5: 			#dc8cc3
+*color6: 			#8cd0d3
+*color7: 			#dcdccc
+*color8: 			#3f3f3f
+*color9: 			#cc9393
+*color10: 			#c3bf9f
+*color11: 			#f0dfaf
+*color12: 			#94bff3
+*color13: 			#ec93d3
+*color14: 			#93e1e3
+*color15: 			#ffffff
+
+emacs*geometry:			126x25
+
+xmessage*geometry:		400x100+960+648
+xmessage*form.message.Scroll:	WhenNeeded
+
+display.geometry:		1279x1023-0-0
+display.borderWidth:		0

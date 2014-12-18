@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Fake acpi event to switch runlevel if running on batteries
+/etc/acpi/actions/default.sh ac_adapter ACPI0003:00 00000080 00000001
+/etc/acpi/actions/default.sh battery PNP0C0A:00 00000080 00000001
+
+# Allow users control keyboard backlight and power it off by default
+/usr/local/bin/asus-kbd-backlight allowusers
+/usr/local/bin/asus-kbd-backlight off

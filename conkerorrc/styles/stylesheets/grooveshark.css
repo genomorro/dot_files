@@ -1,0 +1,15 @@
+/* HTML5 GrooveShark */
+/* Sun Oct 12 18:59:56 2014 */
+
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("html5.grooveshark.com") {
+
+    #main-menu .search .input-reduce {
+	background-color:#3F3F3F !important;
+    }
+
+    .content .input-reduce {
+	background:none no-repeat scroll 8px center #3F3F3F !important;
+    }
+}
