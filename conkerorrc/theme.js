@@ -1,38 +1,38 @@
 // Themes
-// theme_load_paths.push("/home/bofe/.conkerorrc/styles");
-// theme_load_paths.unshift("/home/bofe/.conkerorrc/styles");
+// theme_load_paths.push("/home/genomorro/.conkerorrc/styles");
+// theme_load_paths.unshift("/home/genomorro/.conkerorrc/styles");
 // theme_load("zenburn-conkeror"); 
 
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/ad-block.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/arch.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/darker-facebook.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/diaspora.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/emacswiki-zenburn.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/github-zenburn.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/google-dark.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/grooveshark.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/imdb.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/zenburn-gtk.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/stackoverflow.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/startpage.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/superuser.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/txt-zenburn.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/userstyle-zenburn.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/wikipedia-zenburn-dark.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/youtube-player.css');
-register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/youtube.css');
+//user_pref("browser.display.use_system_colors", "false");
+
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/ad-block.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/arch.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/github-dark.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/google-solarized-dark.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/imdb.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/orgmode-solarized.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/reddit.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/rottentomatoes.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/stackoverflow-dark.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/telegram-solarized-dark.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/txt-solarized-dark-local.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/userstyle-solarized-dark-local.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/wikipedia-solarized-dark-local.css');
+register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/youtube-progress-bar-2.css');
 
 var global_css_registered=false;
-function darken_page(I){
+function solarized (I){
     global_css_registered=global_css_registered ? false : true;
     if(global_css_registered){
-	register_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/no-gtk.css');
+	register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/gtk-local.css');
+	// register_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/solarized-dark-everywhere.css');
     }else{
-	unregister_user_stylesheet('file:///home/bofe/.conkerorrc/styles/stylesheets/no-gtk.css');
+	unregister_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/gtk-local.css');
+	// unregister_user_stylesheet('file:///home/genomorro/.conkerorrc/styles/stylesheets/solarized-dark-everywhere.css');
     }
 }
-interactive("darken-page", "Darken the page in an attempt to save your eyes.", darken_page);
-define_key(default_global_keymap, "C-t", "darken-page");
+interactive("Dark-Solarized-Colors", "Ethan Schoonover's Solarized color scheme", solarized);
+define_key(default_global_keymap, "C-t", "Dark-Solarized-Colors");
 
 // require("favicon");
 // add_hook("mode_line_hook", mode_line_adder(buffer_icon_widget), true);

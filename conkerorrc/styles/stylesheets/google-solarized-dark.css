@@ -1,0 +1,111 @@
+/* Updated 	May 29, 2016 */
+/* https://github.com/alphapapa/solarized-everything-css */
+
+@namespace url(http://www.w3.org/1999/xhtml);
+
+
+@-moz-document url-prefix(http://blogsearch.google),
+url-prefix(http://books.google),
+url-prefix(http://209.85.165.104),
+url-prefix(http://translate.google),
+url-prefix(http://video.google), 
+url-prefix(https://encrypted.google),
+url-prefix(https://translate.google),
+url-prefix(http://scholar.google),
+url-prefix(https://scholar.google),
+url-prefix(http://images.google),
+url-prefix(https://images.google),
+url-prefix(https://www.google.com/fonts),
+regexp('https?://www\\.google\\.[a-z.]*/(?!calendar|nexus|adsense|analytics|maps).*')
+      {
+	  * {
+	      border-color: #657b83 !important;
+	  }
+	  a {
+	      color: #268bd2 !important;
+	  }
+	  a:visited {
+	      color: #6c71c4 !important;
+	  }
+	  body {
+	      background-color: #002b36 !important;
+	      color: #839496 !important;
+	  }
+	  html {
+	      background-color: #002b36 !important;
+	  }
+	  input,
+	  textarea {
+	      background-color: #073642 !important;
+	      background-image: none !important;
+	      color: #839496 !important;
+	  }
+	  blockquote,
+	  pre {
+	      background-color: #073642 !important;
+	      color: #839496 !important;
+	  }
+	  .sfbgg {
+	      background-color: #073642 !important;
+	  }
+	  .sbib_a {
+	      background: linear-gradient(to bottom, #073642, #002b36) !important;
+	  }
+	  input#lst-ib,
+	  #sb_ifc0.sbib_b,
+	  #gs_taif0 {
+	      background: transparent !important;
+	  }
+	  #lst-ib,
+	  .sbico-c {
+	      background-color: #002b36 !important;
+	  }
+	  .kpbb {
+	      background-image: linear-gradient(to bottom, #59a9e1, #268bd2) !important;
+	  }
+	  ._xdb .fl, .mn-hd-txt:hover {
+	      color: #586e75 !important;
+	  }
+	  .hdtb-mn-o, .hdtb-mn-c, .gb_ja, .gb_Ha {
+	      background-image: none !important;
+	      background-color: #002b36 !important;
+	  }
+	  #hdtbSum {
+	      background-color: #002b36 !important;
+	  }
+	  #hdtbMenus.hdtb-td-o {
+	      background-color: #002b36 !important;
+	  }
+	  #hdtb-tls.hdtb-tl {
+	      background-image: linear-gradient(to bottom, #002b36, #073642) !important;
+	  }
+	  #hdtb-tls.hdtb-tl.hdtb-tl-sel {
+	      background-image: linear-gradient(to bottom, #073642, #002b36) !important;
+	  }
+	  #abar_button_opt.ab_button {
+	      background: linear-gradient(to bottom, #002b36, #073642) !important;
+	  }
+	  #appbar {
+	      background-color: #002b36 !important;
+	  }
+	  cite {
+	      color: #859900 !important;
+	  }
+	  .ab_dropdown {
+	      background-color: #002b36 !important;
+	  }
+	  div.crp {
+	      background-color: #002b36 !important;
+	  }
+	  #fbar {
+	      background-color: #073642 !important;
+	  }
+
+	  /* Google scholar */
+	  .gs_rs b, .gs_rt b, .gs_rt2 b {
+	      color: #2aa198 !important;
+	  }
+	  
+	  /* The End */   
+      }
+/* ####### */

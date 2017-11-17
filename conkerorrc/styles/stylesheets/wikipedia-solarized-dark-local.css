@@ -1,0 +1,84 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("wikipedia.org") {
+    * {
+	background-color: transparent !important;
+	color: #839496 !important;	
+    }
+    body, div, form, table, tbody, tr, td, fieldset, ul, li, a, #content, #bodyContent {
+	background-color: #002b36 !important;
+    }
+    input, select, button, checkbox {
+	background-color: #073642 !important;
+	color: #93a1a1 !important;
+    }
+    a {
+	color: #268bd2 !important;
+    }
+    a:visited {
+	color: #6c71c4 !important;
+    }
+    a.new {
+	color: #dc322f !important;
+    }
+    a.new:visited {
+	color: #cb4b16 !important;
+    }
+    .thumb {
+	border-color: #002b36 !important;
+    }
+    div.vectorTabs, div.vectorTabs ul, div.vectorTabs ul > li, div.vectorTabs ul > li > a {
+	background-color: #002b36 !important;
+	background-image: none !important;
+	border: none !important;
+    }
+    img {
+	background-color: #002b36 !important;
+    }
+    .c, .ch, .c1, .cpf, .kw3 { /* cyan */
+    	color: #2aa198 !important;
+    }
+    .cp, .me1 { /* yellow */ 
+    	color: #b58900 !important;
+    }
+    .kw2, .mi { /* base1 */
+    	color: #93a1a1 !important;
+    }
+    .st0 { /* orange */
+    	color: #cb4b16 !important;
+    }
+    .br0, .k, .kd, .kr, .na, .nl, .nt { /* green */
+    	color: #859900 !important;
+    }
+    .nf { /* blue */
+	color: #268bd2 !important;
+    }
+    .kt, .s, s1, .s2, .no, .err { /* red */
+	color: #dc322f !important;
+    }
+    .nb, .bp { /* magenta */
+	color: #d33682 !important;
+    }
+    .ow, .nc, .nd, .nn, .nv { /* violet */
+	color: #6c71c4 !important;
+    }
+    /*** invert images ***/
+    img[title="Wikipedia"],
+    .bookshelf-container .bookend,
+    img.mwe-math-fallback-image-inline,
+    meta.mwe-math-fallback-image-inline,
+    .mw-wiki-logo,
+    #mw-wsmfinal-close,
+    img[src*="Speaker_Icon"],
+    tex,
+    math
+	/* .infobox img[src*=".svg"], */
+	/* img[src*=".png"]:active */
+	{
+            filter: url("data:image/svg+xml;utf8, <svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'i\'><feColorMatrix color-interpolation-filters=\'srgb\' values=\'-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0\'/></filter></svg>#i");
+            -webkit-filter: invert(100%) !important;
+            background-color: transparent !important;
+	}
+    div.floatnone img {
+	display: none;
+    }
+}

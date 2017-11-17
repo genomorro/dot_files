@@ -1,11 +1,12 @@
 // External programs for handling various mime types.
+external_content_handlers.set("application/pdf", "emacsclient -a= -c");
 external_content_handlers =
 {
     "*": "emacsclient -a= -c",
     text: "emacsclient -a= -c",
     image: { "*": "display" },
-    video: { "*": "vlc" },
-    audio: { "*": "vlc" },
+    video: { "*": "mpv" },
+    audio: { "*": "mpv" },
     application: {
 	msword: "lowriter",
         postscript: "emacsclient -a= -c",
@@ -17,18 +18,18 @@ external_content_handlers =
 	"x-gimp": "display",	
 	"x-photoshop": "display",
         "x-dvi": "emacsclient -a= -c",
-	"x-ogg": "vlc",
-	"ogg": "vlc",
-	"x-vlc2": "vlc",
-	"x-ms-wmv": "vlc",
-	"x-ms-wmp": "vlc",
-	"x-drm-v2": "vlc",
-	"asx": "vlc",
-	"smil": "vlc",
-	"x-quicktimeplayer": "vlc",
-	"vnd.rn-realmedia": "vlc",
-	"vnd.rn-realaudio": "vlc",
-	"x-shockware-flash": "vlc"
+	"x-ogg": "mpv",
+	"ogg": "mpv",
+	"x-mpv2": "mpv",
+	"x-ms-wmv": "mpv",
+	"x-ms-wmp": "mpv",
+	"x-drm-v2": "mpv",
+	"asx": "mpv",
+	"smil": "mpv",
+	"x-quicktimeplayer": "mpv",
+	"vnd.rn-realmedia": "mpv",
+	"vnd.rn-realaudio": "mpv",
+	"x-shockware-flash": "mpv",
     }
 }
 

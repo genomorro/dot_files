@@ -1,0 +1,224 @@
+/*
+* Author        :  Hille
+* URL           :  http://userstyles.org/users/24096
+* Title         :  rottentomatoes.com - Nightmode
+* Version       :  1.0.6
+*/
+
+@-moz-document domain(rottentomatoes.com) {
+
+/***** colors used *******************************************
+Background 1:		#000000
+Background 2:		#1a1a1a
+Background 3:		#202020
+Background 4:		#282828
+Borders:		#323232
+Font-color:		#ccc
+Link-color:		#2f8cb7
+*************************************************************/
+
+/***** borders ************************************************/
+
+/** border #323232 **/ 
+#scorePanel .tmeterpanel,
+#movies_sidebar,
+#movies_sidebar .nav-tabs,
+#movies_sidebar .nav-tabs > li:not(:first-of-type),
+#miniMOB .rightColumn,
+#count-link,
+#browser-navigator .navigator-menu,
+#footer,  
+#tomatometer-info,
+#main_movie_sidebar_content,
+blockquote,
+hr,
+table,
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td,
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus,
+.lineHeader,
+.panel-rt.panel-box,
+.review_quote,
+.navbar-rt,
+.hoverBubble .bubbleContent,
+.pagination > li > a, 
+.pagination > li > span,
+.pagination > .disabled > span, 
+.pagination > .disabled > span:hover, 
+.pagination > .disabled > span:focus, 
+.pagination > .disabled > a, 
+.pagination > .disabled > a:hover, 
+.pagination > .disabled > a:focus,
+.bottom_divider,
+.rating_widget .review,
+.modal-header,
+.btn-default,
+.topbar,
+.post.original,
+.nav-tabs,
+.form-control,  
+.panel-rt,  
+.mb-navigator,
+.tb-navigator,
+.topbar .topbarItem:first-child,
+.topbar > .topbarItem,
+.mb-count-panel, 
+.Tepisodes .epis-nav ul li,
+.Tepisodes .epis-nav,
+.Tepisodes .epis-main,
+.Tepisodes .epis-main .epis-tbox,
+.castSection.borderTop,
+.review_table .review_table_row,
+.franchiseLink,
+.searchResult {
+    border-color: #323232 !important;} 
+            
+/** border #444 **/
+.post {
+    border-bottom: 1px solid #444 !important;}            
+  
+/** review quote arrow **/
+.review_quote:after,
+.review_quote:before {
+    border-color: transparent #323232 transparent transparent !important;}
+
+/***** backgrounds ******************************************/
+
+/** #000 **/
+body {
+	background-color: #000 !important;}
+
+/** #1a1a1a **/
+.container,
+.nav > li > a:hover, 
+.nav > li > a:focus,
+.panel {
+	background-color: #1a1a1a !important;}
+
+/** #202020 **/
+#movies_sidebar,   
+#header, #footer,
+#fb-friend-reviews-box > div > div[style]:not([id]):first-child,
+#threadsPreview > div[style]:not([id]),
+#quotesList > div > div > div.media-body > div[style]:not([id]):first-child,
+#whatIsTomatometer > div > div > div.modal-body > div:nth-child(2) > div.col-xs-18 > div > h3 > span[style]:not([id]):first-child,
+#landing > div.body_main.container > div.container > div[style]:first-child,
+div#main,     
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus,
+.panel-rt.panel-box,
+.lineHeader span,
+.pagination > .disabled > span, 
+.pagination > .disabled > span:hover, 
+.pagination > .disabled > span:focus, 
+.pagination > .disabled > a, 
+.pagination > .disabled > a:hover, 
+.pagination > .disabled > a:focus,
+.modal-content,
+.topbar,
+.post.original,
+.pagination>li>a:hover, 
+.pagination>li>span:hover, 
+.pagination>li>a:focus, 
+.pagination>li>span:focus,
+.tt-dropdown-menu,
+.navbar-rt .navbar-searchbox .tt-input.form-control,
+.btn-default,
+.dropdown-menu,
+.navbar-rt .navbar-nav .menuHeader.showMenu,
+.content_box,
+.navbar.navbar-rt #menu .menuHeader:hover,
+.noReview {
+    background-color: #202020 !important;}
+        
+/** #202020 bg **/
+#whatIsTomatometer .title {
+    background: #202020;}
+
+/** #282828 **/
+#scorePanel,
+#movies_sidebar .nav-tabs > li.active, 
+#movies_sidebar .nav-tabs > li:hover,
+#movies_sidebar .nav-tabs,
+.pagination > li > a, 
+.pagination > li > span,
+.review_quote,
+.hoverBubble .bubbleContent,
+.rating_widget .review,
+.table-striped > tbody > tr:nth-child(odd) > td, 
+.table-striped > tbody > tr:nth-child(odd) > th,
+.grey_content_box,
+.comments_quote blockquote,
+.form-control,
+.Tepisodes .epis-main .epis-tbox,
+.ui-widget-content,
+.body .ui-autocomplete,
+.userDropdown.dropdown .dropdown-menu.roundMenu .userStats:hover,
+.dropdown-menu>li>a:focus, 
+.dropdown-menu>li>a:hover {
+    background: #282828 !important;}
+        
+/** #282828 !important **/
+.social-tools
+ {
+    background-color: #282828 !important;}
+          
+/** transparent **/
+.thumbnail,
+.stage {
+    background: transparent;}          
+
+/***** font color ******************************************/
+
+/** #ccc **/
+#movies_sidebar .nav-tabs > li.active > a, 
+#movies_sidebar .nav-tabs > li:hover > a,
+#foot a,
+#foot h2,   
+#zerglayout > div > div > div.zergheadline > a[style],  
+body,
+a.articleLink,
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,     
+p, li, .form-control,
+a.unstyled,
+.hoverBubble .title,
+.thumbs-1r .syndicatedItem .video-title,
+.newsItem .bannerCaption .panel-body .title,
+.btn-default,
+.navbar-rt .navbar-nav .menuHeader.showMenu > a,
+.navigator-menu > li > a,
+.navbar-rt .navbar-nav .menuHeader .dropdown-menu a,
+.navbar-rt .navbar-nav .menuHeader .dropdown-menu .subnav h2.title,
+.black,
+.trendingBar li a, 
+.trendingBar li a:before,
+.Tepisodes h3, .Tepisodes .epis-info h4,
+.Tepisodes .epis-main .epis-meter,
+.movie_list a,
+.line,
+.navbar.navbar-rt #menu .menuHeader:hover {
+	color: #ccc !important;}      
+
+/** #000 **/
+#contentReviews > h2 > a,
+.panel-rt > .panel-heading,
+.videoSection .panel-heading {
+    color: #000 !important;}            
+
+/** #343434**/
+span.tMeterScore,
+.navbar-rt .navbar-nav .menuHeader .dropdown-menu .subnav table.movie_list .tMeterScore {
+    color: #888 !important;}
+
+/** #2f8cb7 **/
+.freshPicks li a,
+a, .a {
+	color: #2f8cb7;}
+}
