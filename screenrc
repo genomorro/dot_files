@@ -50,16 +50,19 @@ backtick 1 1 1 /usr/local/bin/status-bat
 backtick 2 1 1 /usr/local/bin/status-mem
 backtick 3 1 1 /usr/local/bin/status-hdd
 
-caption always '%{= dG}[ %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%? %{g}][ %=%{r}(%{W}%h%{r})%= %{g}][%{W} %d %M %c:%s %1` :: %l %2` %3` %{g}]'
+caption always '%{= dG}[ %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%? %{g}][ %=%{r}(%{W}%h%{r})%= %{g}][%{W} %d %M %c:%s %1` :: %l %2`%3` %{g}]'
 
 setenv LC_CTYPE es_ES.UTF-8
 defutf8 on
+utf8 on on
 defencoding UTF-8
 
 # hardstatus alwaysignore
  hardstatus string "%Lw"
 
 screen -t m 0
-screen -t e 1 emacsclient -t
+screen -t e 1 emacsclient -t -a=
 screen -t w 2 
 screen -t o 3
+
+startup_message on
