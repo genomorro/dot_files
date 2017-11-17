@@ -1,27 +1,16 @@
+gtk-icon-sizes = "panel-menu=16,16:panel=16,16:gtk-menu=16,16:\
+	       	 gtk-large-toolbar=16,16:gtk-small-toolbar=16,16:\
+		 gtk-button=8,8"
 gtk-key-theme-name="Emacs"
-gtk-toolbar-icon-size = GTK_ICON_SIZE_SMALL_TOOLBAR
 gtk-menu-drop-shadow = 1
 gtk-menu-shadow-delay = 1
-gtk-xft-antialias = 1
-gtk-xft-hinting = 1
-gtk-xft-hintstyle = "hintfull"
-gtk-xft-rgba = "rgb"
 
-style "noscrollbars" {
-  GtkScrollbar::slider-width=6
-  # GtkScrollbar::trough-border=0
-  # GtkScrollbar::has-backward-stepper=0
-  # GtkScrollbar::has-forward-stepper=0
-  # GtkScrollbar::has-secondary-backward-stepper=0
-  # GtkScrollbar::has-secondary-forward-stepper=0
-}
-widget "MozillaGtkWidget.*" style "noscrollbars"
-
-style "user-font" {
-	font_name = "-xos4-Terminus-normal-normal-normal-*-14-*-*-*-c-80-fontset-auto1"
-}
-
-widget_class "*" style "user-font"
-
-gtk-font-name="-xos4-Terminus-normal-normal-normal-*-14-*-*-*-c-80-fontset-auto1"
-
+# style "noscrollbars" {
+#   GtkScrollbar::slider-width=6
+#   GtkScrollbar::trough-border=0
+#   GtkScrollbar::has-backward-stepper=0
+#   GtkScrollbar::has-forward-stepper=0
+#   GtkScrollbar::has-secondary-backward-stepper=0
+#   GtkScrollbar::has-secondary-forward-stepper=0
+# }
+# widget "MozillaGtkWidget.*" style "noscrollbars"
