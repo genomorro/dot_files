@@ -10,34 +10,51 @@
 ;; http://tsdh.wordpress.com/
 ;; http://echosa.github.com/
 ;; http://emacsredux.com/
+;; http://blog.patshead.com/
 
-;;Personal information
-(setq user-name "Edgar Uriel Domínguez Espinoza")
 ;; Location Variables
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq calendar-latitude 19.43)
 (setq calendar-longitude -99.09)
 (setq calendar-location-name "Ciudad de México, Distrito Federal, México")
-;; General Settinngs
+(setq calendar-week-start-day 1)
+(setq calendar-day-name-array ["Do" "Lu" "Ma" "Mi" "Ju" "Vi" "Sa"])
+(setq calendar-month-name-array ["Enero" "Febrero" "Marzo" "Abril"
+				 "Mayo" "Junio" "Julio" "Agosto"
+				 "Setiembre" "Octubre" "Noviembre"
+				 "Diciembre"])
+;; General Settings
 (let ((default-directory "~/.emacs.d/elpa/"))
       (normal-top-level-add-subdirs-to-load-path))
 (require 'ac-math)
 (require 'auto-complete-config)
+(require 'auto-complete-pcmp)
+(require 'ac-c-headers)
 (require 'bbdb)
 (require 'em-term)
 (require 'epa-file)
+(require 'eshell-did-you-mean)
 (require 'eww)
 (require 'hl-line)
 (require 'ido)
 (require 'linum)
 (require 'multiple-cursors)
-(require 'org-export-as-s5)
-(require 'org-tree-slide)
+(require 'org)
+(require 'ox-bibtex)
 (require 'package)
+(require 'pdf-occur)
 (require 'popup)
 (require 'server)
 (require 'site-gentoo)
 (require 'smtpmail)
 (require 'speedbar)
+(require 'tex-mode)
 (require 'uniquify)
 (require 'vline)
 (require 'which-func)
@@ -51,6 +68,7 @@
 (load "/usr/share/emacs/site-lisp/site-gentoo")
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-unset-key "\C-z")
+(global-unset-key (kbd "<menu>"))
 (setq uniquify-buffer-name-style 'forward)           ; Making buffer names unique
 (setq bookmark-default-file "~/.emacs.d/bookmarks"   ; No bookmarks in ~/
       bookmark-save-flag 1)                          ; autosave each change
@@ -59,17 +77,21 @@
       scroll-up-aggressively 0.0                     ; ... are very ...
       scroll-down-aggressively 0.0                   ; ... annoying
       scroll-preserve-screen-position t)             ; preserve screen pos with C-v/M-v
+(setq epa-pinentry-mode 'loopback)                   ; Configure EasyPG Assistant to use loopback for pinentry
 ;; Package Manager
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://stable.melpa.org/packages/")
-			 ("ELPA" . "http://tromey.com/elpa/")))
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+ 			 ("melpa" . "https://melpa.org/packages/")
+			 ("org" . "http://orgmode.org/elpa/")
+			 ))
+(setq package-pinned-packages '((yasnippet . "gnu")
+				(org . "org")
+				(org-plus-contrib . "org")))
 ;; Change cursor color according to mode
-(setq read-only-color       "#DCA3A3")
+(setq read-only-color       "#dc322f")
 ;; valid values are t, nil, box, hollow, bar, (bar . WIDTH), hbar,
 ;; (hbar. HEIGHT); see the docs for set-cursor-type
 (setq read-only-cursor-type 'bar)
-(setq overwrite-color       "#DFAF8F")
+(setq overwrite-color       "#cb4b16")
 (setq overwrite-cursor-type 'hollow)
 (setq normal-color          "#C3BF9F")
 (setq normal-cursor-type    'box)
@@ -88,10 +110,17 @@
 (add-hook 'post-command-hook 'set-cursor-according-to-mode)
 ;; Color-theme
 (setq custom-theme-directory "~/.emacs.d/elpa/elisp-local")
-(setq custom-theme-load-path '("/home/bofe/.emacs.d/elpa/zenburn-theme-2.2/"
-			       custom-theme-directory t))
-(load-theme 'zenburn t)
-;; (set-frame-font "Terminus-10")
+(setq custom-theme-load-path '("/home/genomorro/.emacs.d/themes/emacs-color-theme-solarized" custom-theme-directory t))
+(set-frame-parameter nil 'background-mode 'dark)
+(set-terminal-parameter nil 'background-mode 'dark)
+(add-hook 'after-make-frame-functions
+	  (lambda (frame)
+	    (let ((mode (if (display-graphic-p frame) 'light 'dark)))
+	      (set-frame-parameter frame 'background-mode mode)
+	      (set-terminal-parameter frame 'background-mode mode))
+	    (load-theme 'solarized t)))
+(load-theme 'solarized t)
+(set-frame-font "Liberation Mono-6")
 ;; Auto-Complete Mode
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
@@ -99,12 +128,19 @@
 (defun ac-common-setup ()                            ; add yasnippet to default ac-sources
   (setq ac-sources (append '(ac-source-yasnippet) ac-sources)))
 (defun ac-latex-mode-setup ()                        ; add sources for latex
-       (setq ac-sources
-	     (append '(ac-source-math-unicode
-		       ac-source-math-latex
-		       ac-source-latex-commands) ac-sources)))
+  (setq ac-sources
+	(append '(ac-source-math-unicode
+		  ac-source-math-latex
+		  ac-source-latex-commands) ac-sources)))
 (add-hook 'latex-mode-hook 'ac-latex-mode-setup)
 (setq ac-math-unicode-in-math-p t)
+(defun ac-c-mode-setup ()
+  (semantic-mode 1)
+  (setq ac-sources
+	(append '(ac-source-c-headers
+		  ac-source-c-header-symbols
+		  ac-source-semantic-raw) ac-sources)))
+(add-hook 'c-mode-hook 'ac-c-mode-setup)
 ;; Yasnippet
 (setq yas-snippet-dirs
       (append '("~/.emacs.d/yasnippets/genomorro"    ; personal snippets
@@ -127,6 +163,14 @@
 (add-to-list 'auto-mode-alist '("\\.php[s34]?\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
+;; PlantUML mode
+(setq puml-plantuml-jar-path "/usr/local/bin/plantuml.jar")
+(add-to-list 'auto-mode-alist '("\\.puml\\'" . puml-mode))
+(add-to-list 'auto-mode-alist '("\\.plantuml\\'" . puml-mode))
+;; Markdown mode
+(setq markdown-command "markdown2")
+;; PDF-tools
+(pdf-tools-install)
 ;; Modes
 (column-number-mode t)		                     ; Show number of column in the mode-line
 (size-indication-mode t)                             ; show file size in the mode-line
@@ -140,8 +184,11 @@
 (tooltip-mode 0)
 (scroll-bar-mode 0)
 (global-hl-line-mode t)
+(type-break-mode t)
+(pinentry-start t)
+(setq use-file-dialog nil)
 ;; Enable copy/paste with clipboard
-(setq x-select-enable-clipboard t                    ; copy-paste should work ...
+(setq select-enable-clipboard t                      ; copy-paste should work ...
       interprogram-paste-function                    ; ...with...
       'x-cut-buffer-or-selection-value)              ; ...other X clients
 (setq locale-preferred-coding-systems '((".*" . utf-8)))
@@ -233,24 +280,38 @@
 (setq tex-dvi-view-command "emacsclient")
 (add-hook 'latex-mode-hook 'orgtbl-mode)
 (add-hook 'latex-mode-hook 'turn-on-reftex)                    ; with Emacs latex mode
-;; (setq latex-run-command "pdflatex")
-;; (defun tex-view ()                                             ; tex-view for PDF files
-;;   "Preview the last `.pdf' file made by running TeX under Emacs.
-;; This means, made using \\[tex-region], \\[tex-buffer] or \\[tex-file].
-;; The variable `tex-pdf-view-command' specifies the shell command for preview.
-;; You must set that variable yourself before using this command,
-;; because there is no standard value that would generally work."
-;;   (interactive)
-;;   ;; remove the .tex and add .pdf  
-;;   (setq pdf (replace-regexp-in-string ".tex$" ".pdf"
-;; 				      (expand-file-name
-;; 				       (buffer-file-name))))
-;;   (tex-send-command (concat (eval tex-dvi-view-command) " " pdf)))
+(setq latex-run-command "pdflatex")
+(setq tex-start-options "-synctex=1")
+(defun tex-print (&optional alt)                               ; preview for PDF files, Is it works with lpr?
+  "Print the .pdf file made by \\[tex-region], \\[tex-buffer] or \\[tex-file].
+Runs the shell command defined by `tex-dvi-print-command'.  If prefix argument
+is provided, use the alternative command, `tex-alt-dvi-print-command'."
+  (interactive "P")
+  (let ((print-file-name-dvi (tex-append tex-print-file ".pdf"))
+	test-name)
+    (if (and (not (equal (current-buffer) tex-last-buffer-texed))
+	     (buffer-file-name)
+	     ;; Check that this buffer's printed file is up to date.
+	     (file-newer-than-file-p
+	      (setq test-name (tex-append (buffer-file-name) ".pdf"))
+	      (buffer-file-name)))
+	(setq print-file-name-dvi test-name))
+    (if (not (file-exists-p print-file-name-dvi))
+        (error "No appropriate `.pdf' file could be found")
+      (if (tex-shell-running)
+          (tex-kill-job)
+        (tex-start-shell))
+      (tex-send-command
+       (if alt tex-alt-dvi-print-command tex-dvi-print-command)
+       print-file-name-dvi
+       t))))
 ;; Doc-view mode
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)               ; I want to see always the last version
 (setq doc-view-continuous t)                                   ; Continuous scrolling for DocView mode
 (setq doc-view-resolution 300)                                 ; Resolution (dpi) of the image
 (add-to-list 'auto-mode-alist '("[.]odt$" . doc-view-mode))
+;; Speedbar
+(speedbar-add-supported-extension '(".php" ".yml"))
 ;; Shell mode
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
@@ -278,6 +339,8 @@
 (setq eshell-buffer-name "eshell")
 (setq eshell-term-name "xterm-256color")
 (setq eshell-ls-initial-args (quote ("-h")))
+(add-to-list 'eshell-preoutput-filter-functions
+             #'eshell-did-you-mean-output-filter)
 (defun host-name ()
   "Returns the name of the current host minus the domain."
   (let ((hostname (downcase (system-name))))
@@ -290,9 +353,16 @@
 		"][" (eshell/pwd)
 		"]\n└" (if (= (user-uid) 0) "# " "$ "))))
 (setq eshell-prompt-regexp "^[^#$\n]*[#$] ")
+;(setq eshell-prompt-regexp "^\(.\{2\}\[.+\]$\)\|^\(.[\$#]\) ")
 (put 'eshell-prompt-face 'face-alias 'eshell-prompt) ; backward-compatibility alias
 (setq eshell-cmpl-cycle-completions nil)
 (setq eshell-save-history-on-exit t)
+;; SQL Mode
+(setq sql-postgres-options '("-P" "pager=off" "-w"))
+(setq sql-postgres-login-params '((user :default "postgres")
+				  (port :default 5432)
+				  (server :default "localhost")
+				  (database :default "postgres")))
 ;; Mouse options
 (xterm-mouse-mode t)
 (mwheel-install t)
@@ -377,40 +447,16 @@
 (setq send-mail-function 'smtpmail-send-it)
 (setq message-send-mail-function 'smtpmail-send-it)
 (setq user-full-name "Edgar Uriel Domínguez Espinoza")              ; My full name in the e-mail
-(setq user-mail-address "edgar_uriel84@gmx.com")                    ; Default e-mail
-(setq smtpmail-smtp-server "mail.gmx.com")
-(setq smtpmail-smtp-service 587)
+(setq user-mail-address "edgar_uriel84@genomorro.name")             ; Default e-mail
+(setq smtpmail-smtp-server "smtp.mailbox.org")
+(setq smtpmail-smtp-service 465)
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
+(setq smtpmail-stream-type 'tls)
 ;; BBDB
 (bbdb-initialize 'gnus 'message)
 (setq bbdb-default-country "México")
 (setq bbdb-file "~/.emacs.d/bbdb")
 (setq bbdb-north-american-phone-numbers-p nil)
-;; (defun wicked/bbdb-vcard-merge (record)
-;;   "Merge data from vcard interactively into bbdb."
-;;   (let* ((name (bbdb-vcard-values record "fn"))
-;; 	 (company (bbdb-vcard-values record "org"))
-;; 	 (net (bbdb-vcard-get-emails record))
-;; 	 (addrs (bbdb-vcard-get-addresses record))
-;; 	 (phones (bbdb-vcard-get-phones record))
-;; 	 (categories (bbdb-vcard-values record "categories"))
-;; 	 (notes (and (not (string= "" categories))
-;; 		     (list (cons 'categories categories))))
-;; 	 ;; TODO: addrs are not yet imported.  To do this right,
-;; 	 ;; figure out a way to map the several labels to
-;; 	 ;; `bbdb-default-label-list'.  Note, some phone number
-;; 	 ;; conversion may break the format of numbers.
-;; 	 (bbdb-north-american-phone-numbers-p nil)
-;; 	 (new-record (bbdb-vcard-merge-interactively name
-;; 						     company
-;; 						     net
-;; 						     nil ;; Skip addresses
-;; 						     phones ;; Include phones
-;; 						     notes)))
-;;     (setq bbdb-vcard-merged-records (append bbdb-vcard-merged-records 
-;; 					    (list new-record)))))
-;; Replace bbdb-vcard-import.el's definition
-;;(fset 'bbdb-vcard-merge 'wicked/bbdb-vcard-merge)
 ;; Web Browser
 (setq browse-url-browser-function 'eww-browse-url)                  ; Use eww as default browser
 (setq browse-url-generic-program (executable-find "conkeror")
@@ -481,16 +527,24 @@
       org-footnote-auto-adjust t)                                       ; Renumber autocatically footnotes
 ;; Org-Capture templates
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/Documentos/Agenda/gtd.org" "2014") 
+      '(("t" "todo" entry (file+headline (lambda () (concat org-directory "gtd.org")) "2017")
 	 "* TODO %^{Brief Description} %^G\n%U\n\n%?")
-	("n" "note" entry (file+headline (concat org-directory "/notes.org") "2014")
+	("n" "note" entry (file+headline (lambda () (concat org-directory "notes.org")) "2017")
 	 "* %^{Title} %^G\n%U\n\n%?")
 	))
-;; Org to S5
-(setq org-s5-theme "default")                      ; blue, default i18n pixel railscast
+;; Org-babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(;; other Babel languages
+   (plantuml . t)))
+(setq org-plantuml-jar-path
+      (expand-file-name "/usr/local/bin/plantuml.jar"))
+;; puml-mode and Org
+(add-to-list
+  'org-src-lang-modes '("plantuml" . puml))
 ;; Dired Mode
 (put 'dired-find-alternate-file 'disabled nil)
-(setq dired-listing-switches "-lh")
+(setq dired-listing-switches "-lh --group-directories-first --time-style=+%c")
 (setq dired-recursive-copies 'always)
 (setq dired-dwim-target t)
 ;; Ido Mode
@@ -520,10 +574,6 @@
 	       ) ido-work-directory-list))
 ;; when using ido, the confirmation is rather annoying...
 (setq confirm-nonexistent-file-or-buffer nil)
-;; Social Networking
-;; (setq dropbox-consumer-key "fcune5tkimt96k0")
-;; (setq dropbox-consumer-secret "xg0gwdgda429hyn")
-;; (setq dropbox-locale "es_MX")
 ;; Newsticker
 (setq newsticker-html-renderer 'w3m-region)
 (setq newsticker-treeview-treewindow-width 40)
@@ -554,17 +604,12 @@
       erc-log-write-after-send t
       erc-log-write-after-insert t)
 ;;      erc-log-insert-log-on-open t)
-(setq erc-server-history-list '("irc.freenode.net"
-				"im.bitlbee.org"))
+(setq erc-server-history-list '("irc.freenode.net"))
 (setq erc-server "irc.freenode.net"
-      erc-port 6667 
+      erc-port 6667
       erc-nick "genomorro"
-      erc-email-userid "edgar_uriel84@gmx.com")
-(setq erc-server "im.bitlbee.org"
-      erc-port 6667 
-      erc-nick "genomorro"
-      erc-email-userid "edgar_uriel84@gmx.com")
-(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs-es" "#lidsol" "#gentoo-es")))
+      erc-email-userid "edgar_uriel84@genomorro.name")
+(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs-es" "#lidsol" "#gentoo-es" "#conkeror")))
 (setq erc-button-url-regexp
       "\\([-a-zA-Z0-9_=!?#$@~`%&*+\\/:;,]+\\.\\)+[-a-zA-Z0-9_=!?#$@~`%&*+\\/:;,]*[-a-zA-Z0-9\\/]")
 (setq erc-keywords '((".*Online" (:foreground "#604B8A"))
@@ -582,21 +627,6 @@
       (let ((nameless-msg (replace-regexp-in-string "^\<.*?\> " "" msg)))
 	(start-process-shell-command "notify" nil "aplay ~/.emacs.d/sounds/ReceiveIM.wav"))))
 (add-hook 'erc-insert-pre-hook 'erc-notify-on-msg)
-;; MPC
-(setq mpc-browser-tags '(Artist Album))
-(setq mpc-mpd-music-directory "/home/DATOS/Música")
-(setq mpc-songs-format "%3{Track} %25{Title} %-5{Time} %20{Album} %20{Artist} %10{Date}")
-;; Count words in a region
-(defun wc (&optional start end)
-  "Prints number of lines, words and characters in region or whole buffer."
-  (interactive)
-  (let ((n 0)
-	(start (if mark-active (region-beginning) (point-min)))
-	(end (if mark-active (region-end) (point-max))))
-    (save-excursion
-      (goto-char start)
-      (while (< (point) end) (if (forward-word 1) (setq n (1+ n)))))
-    (message "%3d %3d %3d" (count-lines start end) n (- end start))))
 ;; Pop-ups
 (defun popup (title msg &optional sound)
   "Show a popup if we're on X, or echo it otherwise; TITLE is the title
@@ -638,3 +668,27 @@ a sound to be played"
 ;; Playing with font sizes
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
+;; Automatically Adjust Font Size When Frame Width Changes
+(defun font-scale-on-frame-width ()
+  (if (< (frame-width) 96)
+      (text-scale-set -0.6)
+    (text-scale-set 0)))
+(add-hook 'window-configuration-change-hook 'font-scale-on-frame-width)
+;; Automatic config
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(package-selected-packages
+   (quote
+    (markdown-mode yasnippet yaml-mode xresources-theme vline twig-mode puml-mode org org-plus-contrib php-mode pdf-tools pass multiple-cursors magit golden-ratio eww-lnum eshell-did-you-mean conkeror-minor-mode bbdb base16-theme auto-complete-pcmp apu ac-math ac-c-headers))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
