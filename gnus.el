@@ -2,76 +2,41 @@
 
 ;; Set default mail account
 (require 'nnir)
-(setq gnus-select-method '(nnimap "GMX"
-      (nnimap-address "imap.gmx.com")
+(setq gnus-select-method '(nnimap "Genomorro"
+      (nnimap-address "mail.mailo.com")
       (nnimap-stream ssl)
       (nnir-search-engine imap)))
 
 ;; Set secondary accounts
 (setq gnus-secondary-select-methods
-      '((nnimap "Yahoo"
-                (nnimap-address "imap.mail.yahoo.com")
-                (nnir-search-engine imap))
-        (nnimap "Mailoo"
+      '((nnimap "Mailoo"
                 (nnimap-address "imaps.mailoo.org")
-                (nnir-search-engine imap))
-        (nnimap "iTelcel"
-                (nnimap-address "imap.itelcel.com")
-		(nnimap-stream network)
                 (nnir-search-engine imap))
         (nnimap "Gmail"
                 (nnimap-address "imap.gmail.com")
-                (nnir-search-engine imap))
-        (nnimap "OpenMailBox"
-                (nnimap-address "imap.openmailbox.org")
                 (nnir-search-engine imap))))
 
 ;; Set multiple SMTP accounts
 (setq gnus-parameters
       '((".*"
 	 (posting-style
-	  (eval	(setq gnus-message-archive-group "Sent"))
-	  (eval	(setq gnus-message-archive-method '(nnimap "GMX")))
-	  ))
-	("nnimap\\+GMX:.*"
-	 (posting-style
-	  (eval	(setq gnus-message-archive-group "Sent"))
-	  (eval (setq gnus-message-archive-method '(nnimap "GMX")))
-	  ))
-	("nnimap\\+Yahoo:.*"
-	 (posting-style
-	  (address "@yahoo.com.mx")
-	  (eval (setq smtpmail-smtp-server "smtp.mail.yahoo.com"))
-	  (eval	(setq gnus-message-archive-group "nnimap+Yahoo:Sent"))
-	  (eval	(setq gnus-message-archive-method '(nnimap "Yahoo")))
+	  (eval (setq smtpmail-smtp-server "mail.net-c.com"))
+	  (eval	(setq gnus-message-archive-group "sent"))
+	  (eval	(setq gnus-message-archive-method '(nnimap "Genomorro")))
 	  ))
 	("nnimap\\+Mailoo:.*"
 	 (posting-style
-	  (address "@mailoo.org")
-	  (eval (setq smtpmail-smtp-server "smtp.mailoo.org"))
+	  (address "edgar_uriel84@mailoo.org")
+	  (eval (setq smtpmail-smtp-server "smtps.mailoo.org"))
 	  (eval	(setq gnus-message-archive-group "nnimap+Mailoo:Sent"))
 	  (eval	(setq gnus-message-archive-method '(nnimap "Mailoo")))
 	  ))
-	("nnimap\\+iTelcel:.*"
-	 (posting-style
-	  (address "@itelcel.com")
-	  (eval (setq smtpmail-smtp-server "smtp.itelcel.com"))
-	  (eval	(setq gnus-message-archive-group "nnimap+iTelcel:Sent"))
-	  (eval	(setq gnus-message-archive-method '(nnimap "iTelcel")))
-	  ))
 	("nnimap\\+Gmail:.*"
 	 (posting-style
-	  (address "@gmail.com")
+	  (address "apesta.gogle@gmail.com")
 	  (eval (setq smtpmail-smtp-server "smtp.gmail.com"))
 	  (eval	(setq gnus-message-archive-group "nnimap+Gmail:[Gmail]/Sent Mail"))
 	  (eval (setq gnus-message-archive-method '(nnimap "Gmail")))
-	  ))
-	("nnimap\\+OpenMailBox:.*"
-	 (posting-style
-	  (address "@openmailbox.org")
-	  (eval (setq smtpmail-smtp-server "smtp.openmailbox.org"))
-	  (eval	(setq gnus-message-archive-group "nnimap+OpenMailBox:Sent"))
-	  (eval (setq gnus-message-archive-method '(nnimap "OpenMailBox")))
 	  ))
 	)
 )
