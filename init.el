@@ -11,6 +11,7 @@
 ;; http://echosa.github.com/
 ;; http://emacsredux.com/
 ;; http://blog.patshead.com/
+;; https://github.com/pyr/dot.emacs
 
 ;; Location Variables
 
@@ -40,6 +41,8 @@
 (require 'em-term)
 (require 'epa-file)
 (require 'eshell-did-you-mean)
+(require 'em-unix)
+(require 'em-dirs)
 (require 'eww)
 (require 'hl-line)
 (require 'ido)
@@ -47,6 +50,7 @@
 (require 'multiple-cursors)
 (require 'org)
 (require 'ox-bibtex)
+(require 'ox-gfm)
 (require 'package)
 (require 'pdf-occur)
 (require 'popup)
@@ -93,34 +97,34 @@
 (setq read-only-cursor-type 'bar)
 (setq overwrite-color       "#cb4b16")
 (setq overwrite-cursor-type 'hollow)
-(setq normal-color          "#C3BF9F")
 (setq normal-cursor-type    'box)
 (defun set-cursor-according-to-mode ()
   "change cursor color and type according to some minor modes."
   (cond
    (buffer-read-only
-    (set-cursor-color read-only-color)
+    ;; (set-cursor-color read-only-color)
     (setq cursor-type read-only-cursor-type))
    (overwrite-mode
-    (set-cursor-color overwrite-color)
+    ;; (set-cursor-color overwrite-color)
     (setq cursor-type overwrite-cursor-type))
    (t 
-    (set-cursor-color normal-color)
+    ;; (set-cursor-color normal-color)
     (setq cursor-type normal-cursor-type))))
 (add-hook 'post-command-hook 'set-cursor-according-to-mode)
 ;; Color-theme
 (setq custom-theme-directory "~/.emacs.d/elpa/elisp-local")
-(setq custom-theme-load-path '("/home/genomorro/.emacs.d/themes/emacs-color-theme-solarized" custom-theme-directory t))
-(set-frame-parameter nil 'background-mode 'dark)
-(set-terminal-parameter nil 'background-mode 'dark)
-(add-hook 'after-make-frame-functions
-	  (lambda (frame)
-	    (let ((mode (if (display-graphic-p frame) 'light 'dark)))
-	      (set-frame-parameter frame 'background-mode mode)
-	      (set-terminal-parameter frame 'background-mode mode))
-	    (load-theme 'solarized t)))
-(load-theme 'solarized t)
-(set-frame-font "Liberation Mono-6")
+(add-to-list 'custom-theme-load-path "/home/genomorro/.emacs.d/themes/emacs-color-theme-solarized"
+	                             "^/home/genomorro/.emacs.d/elpa/base16-theme")
+(defun toggle-night-color-theme ()
+    "Switch to/from night color scheme."
+    (interactive)
+    (if (eq frame-background-mode 'dark)
+          (setq frame-background-mode 'light)
+      (setq frame-background-mode  'dark))
+    (load-theme 'solarized t)
+    (mapc 'frame-set-background-mode (frame-list)))
+(toggle-night-color-theme)
+(global-set-key (kbd "<f6>") 'toggle-night-color-theme)
 ;; Auto-Complete Mode
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
@@ -185,7 +189,6 @@
 (scroll-bar-mode 0)
 (global-hl-line-mode t)
 (type-break-mode t)
-(pinentry-start t)
 (setq use-file-dialog nil)
 ;; Enable copy/paste with clipboard
 (setq select-enable-clipboard t                      ; copy-paste should work ...
@@ -218,14 +221,15 @@
 	    (setq fill-column 96))                   ; Nice for pretty print on landscape: 77 
           )
 ;; Spell settings
-(setq ispell-program-name "aspell"
-      ispell-extra-args '("--sug-mode=ultra"))
+(setq ispell-program-name "hunspell")
+(setq ispell-really-hunspell t)
 (global-set-key (kbd "C-c E") (lambda()(interactive)
-				(ispell-change-dictionary "english") (flyspell-buffer))) 
+				(ispell-change-dictionary "en_US") (flyspell-buffer))) 
 (global-set-key (kbd "C-c S") (lambda()(interactive)
-				(ispell-change-dictionary "spanish") (flyspell-buffer))) 
+				(ispell-change-dictionary "es_MX") (flyspell-buffer)))
 ;; Pretty Print
-(setq lpr-switches '("-p -o page-top=0 -o page-bottom=57 -o page-left=57 -o page-right=57 -o media=Letter -o portrait -o fit-to-page"))
+;; 57=2cm 43=1.5cm
+(setq lpr-switches '("-p -o page-top=57 -o page-bottom=57 -o page-left=57 -o page-right=57 -o media=Letter -o portrait -o fit-to-page"))
 (defun ps-save-buffer-in-pdf ()
   "Save a buffer in a PDF file"
   (interactive)
@@ -311,7 +315,7 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
 (setq doc-view-resolution 300)                                 ; Resolution (dpi) of the image
 (add-to-list 'auto-mode-alist '("[.]odt$" . doc-view-mode))
 ;; Speedbar
-(speedbar-add-supported-extension '(".php" ".yml"))
+(speedbar-add-supported-extension '(".php" ".twig" ".yml"))
 ;; Shell mode
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
@@ -329,11 +333,9 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
 (setq eshell-visual-commands
       (append '("alsamixer"
 		"mocp"
-		"ncmpcpp"		
 		"rtorrent"
 		"ssh"
-		"wicd-curses"
-		"vlc"
+		"nmtui"
 		) eshell-visual-commands))
 (setq eshell-buffer-maximum-lines 4096)
 (setq eshell-buffer-name "eshell")
@@ -448,7 +450,7 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
 (setq message-send-mail-function 'smtpmail-send-it)
 (setq user-full-name "Edgar Uriel Domínguez Espinoza")              ; My full name in the e-mail
 (setq user-mail-address "edgar_uriel84@genomorro.name")             ; Default e-mail
-(setq smtpmail-smtp-server "smtp.mailbox.org")
+(setq smtpmail-smtp-server "mail.mailo.com")
 (setq smtpmail-smtp-service 465)
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
 (setq smtpmail-stream-type 'tls)
@@ -459,7 +461,7 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
 (setq bbdb-north-american-phone-numbers-p nil)
 ;; Web Browser
 (setq browse-url-browser-function 'eww-browse-url)                  ; Use eww as default browser
-(setq browse-url-generic-program (executable-find "conkeror")
+(setq browse-url-generic-program (executable-find "firefox")
       shr-external-browser 'browse-url-generic)
 (define-key eww-mode-map "r" 'eww-reload)
 (define-key eww-mode-map "B" 'eww-back-url)
@@ -488,38 +490,6 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
 ;; MobileOrg
 (setq org-mobile-directory "~/.emacs.d/mobile/")
 (setq org-mobile-inbox-for-pull "~/Documentos/Agenda/notes.org")
-(defvar org-mobile-push-timer nil
-  "Timer that `org-mobile-push-timer' used to reschedule itself, or nil.")
-(defun org-mobile-push-with-delay (secs)
-  (when org-mobile-push-timer
-    (cancel-timer org-mobile-push-timer))
-  (setq org-mobile-push-timer
-        (run-with-idle-timer
-         (* 1 secs) nil 'org-mobile-push)))
-(add-hook 'after-save-hook 
- (lambda () 
-   (when (eq major-mode 'org-mode)
-     (dolist (file (org-mobile-files-alist))
-       (if (string= (expand-file-name (car file)) (buffer-file-name))
-           (org-mobile-push-with-delay 30)))
-   )))
-(run-at-time "00:05" 86400 '(lambda () (org-mobile-push-with-delay 1))) ; refreshes agenda file each day
-(org-mobile-pull)                                                       ; run org-mobile-pull at startup
-(defun install-monitor (file secs)
-  (run-with-timer
-   0 secs
-   (lambda (f p)
-     (unless (< p (second (time-since (elt (file-attributes f) 5))))
-       (org-mobile-pull)))
-   file secs))
-(install-monitor (file-truename
-                  (concat
-                   (file-name-as-directory org-mobile-directory)
-                          org-mobile-capture-file))
-                 5)
-;; Do a pull every 5 minutes to circumvent problems with timestamping
-;; (ie. dropbox bugs)
-(run-with-timer 0 (* 5 60) 'org-mobile-pull)
 ;; Org-Capture
 (setq org-default-notes-file "~/Documentos/Agenda/notes.org")
 (define-key global-map "\C-cr" 'org-capture)
@@ -527,10 +497,10 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
       org-footnote-auto-adjust t)                                       ; Renumber autocatically footnotes
 ;; Org-Capture templates
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline (lambda () (concat org-directory "gtd.org")) "2017")
-	 "* TODO %^{Brief Description} %^G\n%U\n\n%?")
-	("n" "note" entry (file+headline (lambda () (concat org-directory "notes.org")) "2017")
-	 "* %^{Title} %^G\n%U\n\n%?")
+      '(("t" "todo" entry (file+headline (lambda () (concat org-directory "gtd.org")) "2019")
+	 "* TODO %^{Brief Description} %^G\n:PROPERTIES:\n:CREATED:  %U\n:END:\n\n%?")
+	("n" "note" entry (file+headline (lambda () (concat org-directory "notes.org")) "2019")
+	 "* %^{Title} %^G\n:PROPERTIES:\n:CREATED:  %U\n:END:\n\n%?")
 	))
 ;; Org-babel
 (org-babel-do-load-languages
@@ -578,16 +548,14 @@ is provided, use the alternative command, `tex-alt-dvi-print-command'."
 (setq newsticker-html-renderer 'w3m-region)
 (setq newsticker-treeview-treewindow-width 40)
 (setq newsticker-treeview-listwindow-height 30)
-(setq newsticker-url-list '(("Barrapunto" "http://barrapunto.com/article.pl?sid=12/12/11/1817215&from=rss" nil nil nil)
+(setq newsticker-url-list '(("Barrapunto" "http://softlibre.barrapunto.com/softlibre.rss" nil nil nil)
 			    ("Cultura Libre" "http://manzanamecanica.org/podcast.xml" nil nil nil)
 			    ("Diario de Programación" "http://blog.chuidiang.com/feed/" nil nil nil)
 			    ("El blog de Jesús Amieiro" "http://feeds.feedburner.com/ElBlogDeJesusAmieiro" nil nil nil)
-			    ("Kriptópolis" "http://www.kriptopolis.org/rss" nil nil nil)
 			    ("La Cofradía Digital" "http://cofradia.org/feed/" nil nil nil)
 			    ("Software Libre" "http://www.somoslibres.org/backend.php" nil nil nil)
-			    ("DiarioSalud.net" "http://www.diariosalud.net/cache/rss20.xml" nil nil nil)
 			    ("Medicina en Demedicina" "http://feeds.feedburner.com/demedicina" nil nil nil)
-			    ("MedlinePlus" "http://www.nlm.nih.gov/medlineplus/feeds/whatsnew_es.xml" nil nil nil)
+			    ("MedlinePlus" "https://medlineplus.gov/spanish/groupfeeds/new.xml" nil nil nil)
 			    ("Al hilo del tiempo" "http://feeds.feedburner.com/imer/alhilodeltiempo" nil nil nil)
 			    ("DIXO » Fernanda Tapia" "http://feeds.feedburner.com/dixo-fernanda-tapia" nil nil nil)))
 (setq newsticker-url-list-defaults '(("Emacs Wiki" "http://www.emacswiki.org/cgi-bin/wiki.pl?action=rss" nil 3600)
@@ -680,12 +648,83 @@ a sound to be played"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#657b83")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(fci-rule-color "#eee8d5")
+ '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
+ '(highlight-symbol-colors
+   (--map
+    (solarized-color-blend it "#fdf6e3" 0.25)
+    (quote
+     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+ '(highlight-symbol-foreground-color "#586e75")
+ '(highlight-tail-colors
+   (quote
+    (("#eee8d5" . 0)
+     ("#B4C342" . 20)
+     ("#69CABF" . 30)
+     ("#69B7F0" . 50)
+     ("#DEB542" . 60)
+     ("#F2804F" . 70)
+     ("#F771AC" . 85)
+     ("#eee8d5" . 100))))
+ '(hl-bg-colors
+   (quote
+    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
+ '(hl-fg-colors
+   (quote
+    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
+ '(magit-diff-use-overlays nil)
+ '(magit-use-overlays nil)
+ '(nrepl-message-colors
+   (quote
+    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (markdown-mode yasnippet yaml-mode xresources-theme vline twig-mode puml-mode org org-plus-contrib php-mode pdf-tools pass multiple-cursors magit golden-ratio eww-lnum eshell-did-you-mean conkeror-minor-mode bbdb base16-theme auto-complete-pcmp apu ac-math ac-c-headers))))
+    (multiple-cursors markdown-mode+ markdown-preview-eww org-plus-contrib pass ess-R-data-view ox-epub bbdb-csv-import ox-gfm csv-mode yasnippet yaml-mode vline twig-mode puml-mode pdf-tools magit golden-ratio eww-lnum eshell-did-you-mean conkeror-minor-mode bbdb auto-complete-pcmp apu ac-math ac-c-headers)))
+ '(pos-tip-background-color "#eee8d5")
+ '(pos-tip-foreground-color "#586e75")
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
+ '(term-default-bg-color "#fdf6e3")
+ '(term-default-fg-color "#657b83")
+ '(vc-annotate-background nil)
+ '(vc-annotate-background-mode nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dc322f")
+     (40 . "#c37300")
+     (60 . "#b97d00")
+     (80 . "#b58900")
+     (100 . "#a18700")
+     (120 . "#9b8700")
+     (140 . "#948700")
+     (160 . "#8d8700")
+     (180 . "#859900")
+     (200 . "#5a942c")
+     (220 . "#439b43")
+     (240 . "#2da159")
+     (260 . "#16a870")
+     (280 . "#2aa198")
+     (300 . "#009fa7")
+     (320 . "#0097b7")
+     (340 . "#008fc7")
+     (360 . "#268bd2"))))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list
+   (quote
+    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
+ '(xterm-color-names
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
+ '(xterm-color-names-bright
+   ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
