@@ -1,0 +1,8 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>PHP.net</os:ShortName>
+<os:Description>PHP.net - Search</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAA7EAAAOxADiLD6NAAAAb0lEQVR4nGNsaDjAQApgIkk1ORpY0Pjh4eIQxsqVL4m1QVNTk4ANWE0NDxeHcNFlr1+/Dld0/fp1glwmZA7cMXi4dAtWiHXILkYGyLIscFcywMLh+vXrcAamLMJJ8DDFZCCzmfC4BNl4OGCkeWoFAHM4Vw2aczT5AAAAAElFTkSuQmCC</os:Image>
+<os:Url type="text/html" method="GET" template="http://www.php.net/manual-lookup.php?pattern={searchTerms}&amp;src={referrer:source?}">
+</os:Url>
+</SearchPlugin>

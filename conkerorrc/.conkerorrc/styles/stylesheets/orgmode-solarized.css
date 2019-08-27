@@ -1,0 +1,52 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("orgmode.org") {
+
+    html, body, body #content {
+	background-color: #002b36 !important;
+	color: #839496 !important;
+    }
+
+    h1, h2 {
+	color: #586e75 !important;
+    }
+    
+    .move, .outline-3, #postamble, #license {
+	background-color: #073642 !important;
+	color: #93a1a1 !important;
+    }
+    
+    a {
+	color: #268bd2 !important;
+    }
+    
+    a:hover, a:active {
+		 color: #2aa198 !important;
+	     }
+    
+    a:visited {
+	color: #6c71c4 !important;
+    }
+
+    code,
+    pre,
+    kbd {
+	background-color: #073642 !important;
+	color: #93a1a1 !important;
+	border: 1px solid #657b83 !important;
+	box-shadow: none !important;
+	border-radius: 0.4em !important;
+    }
+    #table-of-contents {
+	background-color: #073642 !important;
+	color: #93a1a1 !important;
+	border: 1px solid #657b83 !important;
+    }
+    #translate {
+	top: 130px;
+    }
+    #logo {
+	height: 120px
+    }
+}
+

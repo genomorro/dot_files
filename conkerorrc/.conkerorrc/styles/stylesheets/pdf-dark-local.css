@@ -1,0 +1,7 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document url-prefix("http://"), url-prefix("https://"), url-prefix("ftp://"), url-prefix("file://") {
+/*** Firefox PDF Viewer ***/
+  .textLayer {
+    background-color: black;
+  }
+}

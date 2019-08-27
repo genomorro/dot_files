@@ -1,0 +1,455 @@
+/* Jan 17, 2016 */
+/* Import all CSS based ad blockers */
+
+@import url("http://www.gozer.org/mozilla/ad_blocking/css/ad_blocking.css");
+@import url("http://www.gozer.org/mozilla/ad_blocking/css/sites.css");
+@import url("http://www.floppymoose.com/userContent.css");
+/* @import url("http://stevenf.com/shutup/shutup-latest.css"); */
+
+/* https://userstyles.org/styles/100686/userstyles-org-cleaner-no-ads */
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("userstyles.org") {
+    div.ad,
+    div#post-install-ad,
+    div#below-install-ad.ad,
+    div#stylish-installed-style-installed>div {
+        display: none !important;
+    }
+}
+
+/*  https://userstyles.org/styles/101444/youtube-com-cleaner-no-ads */
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("youtube.com") {
+    #watch-channel-brand-div,
+    .video-list-item {
+        display: none !important;
+    }
+    .video-list-item.related-list-item {
+        display: block !important;
+    }
+}
+
+/* https://userstyles.org/styles/97600/word-reference */
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("www.wordreference.com") {
+    #rightcolumn,
+    #ad1,
+    body > :nth-child(5){
+        display: none !important;
+    }
+    #centercolumn{
+        width: 100% !important;
+    }
+}
+
+/* https://userstyles.org/styles/94894/generic-ad-blocker */
+/* i really want this to be global */
+
+*[class="adsbygoogle"],
+*[id^="google_ads_frame"],
+*[id^="google_ads_iframe"],
+*[href^="http://googleads.g.doubleclick.net"],
+*[id^="zrt_ads_frame"],
+*[src^="http://www.da-ads.com/"],
+*[src^="http://ad.ladssrv.info"],
+*[src^="//coinurl.com/"],
+*[src^="//ad.a-ads.com/"],
+*[src^="http://d.delivery45.com/"],
+*[src^="http://syndication.exoclick.com/"],
+*[src^="http://ads2.msads.net"],
+*[src^="http://ads.trafficjunky.net"],
+*[src^="http://ss.phncdn.com/"],
+*[src^="http://ads2.contentabc.com"],
+*[src^="//dp.g.doubleclick.net"],
+*[src^="http://pixel.mathtag.com/click/"],
+*[src^="http://creative.mathads.com/"],
+*[src*=".adnxs.com/"],
+*[src*=".padsdel.com/"],
+*[src^="http://adserver."],
+*[href^="http://ad.doubleclick.net"],
+*[href^="http://ams1.ib.adnxs.com"],
+*[href^="http://a.tribalfusion.com/h.click"],
+*[href^="//coinurl.com/"],
+*[href^="//ad.a-ads.com/"],
+*[href^="http://d.delivery45.com/"],
+*[href^="http://syndication.exoclick.com/"],
+*[href^="http://ads2.msads.net"],
+*[href^="http://adserver."],
+*[href^="http://ads.trafficjunky.net"],
+*[href^="http://ss.phncdn.com/"],
+*[href^="http://ads2.contentabc.com"],
+*[href^="//dp.g.doubleclick.net"],
+*[href^="http://geo.hyperlinksecure.com"],
+*[href^="http://pixel.mathtag.com/click/"],
+*[href^="http://creative.mathads.com/"],
+*[href*=".adnxs.com/"],
+*[href*=".padsdel.com/"],
+#ad-container-span-old {
+    position: absolute !important;
+    top: -9999999em !important;
+    left: -999999999em !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.000001 !important;}
+
+@-moz-document domain("deviantart.com") {
+    *[class*=-ad-chrome],
+    *[class*=-ad-container],
+    .sleekadbubble,
+    .ad-blocking-makes-fella-confused,
+    .partial-ad,
+    .browse-inline-ad,
+    .da-custom-ad-box,
+    *[class*=-ad-frontpage-banner],
+    .tower-ad-header,
+    .sleekadfooter,
+    #gmi-MessageCenterDockAd,
+    #block-notice,
+    .mczone-you-know-what,
+    .sidebar-you-know-what, #sidebar-you-know-what,
+    .discoverytag_right_ad,
+    .discovery-top-ad {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+@-moz-document regexp(".*.deviantart.com/(|journal/)") {
+    #fake-col-left,
+    #fake-col-left + #gruze-columns .guideblock:not(#pagemenu)  {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+    #fake-col-left + #gruze-columns #gruze-main.pad-left {
+        margin-left: 0px !important;}}
+
+@-moz-document regexp(".*.deviantart.com/aboutus/") {
+    td.gruze-sidebar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+@-moz-document regexp(".*.deviantart.com/gallery/.*") {
+    td.gruze-sidebar.right-sidebar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+@-moz-document regexp(".*.deviantart.com/$") {
+    div[gmi-typeid="50"], div[gmi-name="ad_zone"] {
+        display: none !important;}}
+
+/*[[0.5]]*/
+
+@-moz-document url-prefix("http://orteil.dashnet.org/cookieclicker/") {
+    #support, .supportPlaceholder, #sectionAd {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}
+
+    #sectionRight {
+        right: 0px !important;}
+
+    #sectionMiddle {
+        right: 318px !important;}
+
+    .separatorRight {
+        right: 317px !important;}}
+
+@-moz-document domain("www.youtube.com") {
+    #premium-yva, #premium-yva ~ *,
+    #watch-channel-brand-div,
+    #watch-longform-ad,
+    .ad-div,
+    DIV[id^="google_ads"] {
+        display: none !important;
+        width: 0px !important;
+        height: 0px !important;
+        position: absolute !important;
+        top: -100000000px !important;}}
+
+@-moz-document domain("www.equestriadaily.com") {
+    .settings + div,
+    div[id*="-ad"],
+    #sidebar-right-headlines > div[id^="LinkList"][class="widget LinkList"] + div {
+        display: none !important;}}
+
+@-moz-document domain("www.fimfiction.net") {
+    ins, .ad_container, .adblock_on {
+        display: none !important;}}
+
+@-moz-document domain("newgrounds.com") {
+    .headerads,
+    .footerads,
+    div[style="position:fixed;top:0px;left:0;z-index:100;width:100%;height:768px;overflow:hidden;visibility:hidden;"],
+    div[style="position:fixed;top:0px;right:0;z-index:100;width:100%;height:768px;overflow:hidden;visibility:hidden;"],
+    #portal_reviews ~ script + DIV,
+    .textads,
+    .skinad-l, .skinad-r,
+    #main > DIV:nth-child(5) > DIV:last-child,
+    .GAR_header_topbar, *[id^="adunit-"] {
+        display: none !important;}
+    
+    #footer {
+        height: 575px !important;}
+    
+    span#frontpagemessage {
+        bottom: -550px !important;}
+    
+    #cpmstar_skinRightObject > OBJECT,
+    #cpmstar_skinLeftObject > OBJECT {
+        width: 0 !important;
+        height: 0 !important;}
+    
+    .adcode_container {
+        display: none !important;}}
+
+@-moz-document url-prefix("http://www.newgrounds.com/wiki") {
+    .thincol > div:first-child, #main > DIV:nth-child(5) > DIV:last-child {
+				    display: block !important;}}
+
+@-moz-document url("http://www.newgrounds.com/") {
+    #main > DIV:nth-child(4) > DIV:nth-child(2), #main > DIV:nth-child(4) > DIV:nth-child(5) {
+						     display: none !important;
+						     width: 0 !important;
+						     height: 0 !important;}
+
+    .fatcol > DIV:last-child {
+        display: block !important;}}
+
+@-moz-document regexp("http://www.newgrounds.com/((art|games|movies|audio|collection)|fpa/(games|movies)(/../....|)|((portal|art|games|movies|audio|collection)(/view/|/browse.*)))") {
+    .thincol > DIV:first-child,
+    .thincol > DIV:last-child {
+        display: none !important;}}
+
+@-moz-document regexp("http://www.newgrounds.com/((portal|art|games|movies|audio|collection)/view/.*/feature|news/post/).*") {
+    .thincol > div:first-child, .thincol > div.one3 {
+        display: block !important;}}
+
+@-moz-document regexp("(([^\.])+).newgrounds.com/news/post/.*") {
+    .thincol > div.one3 {
+        display: block !important;}}
+
+@-moz-document regexp("http://www.newgrounds.com/(art|games|movies|audio|collection)/under_judgment|") {
+    .thincol > DIV:last-child {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+@-moz-document regexp("http://www.newgrounds.com/portal/search/(art|games|movies|audio|collection)/.*") {
+    .thincol > * {display: none !important;}
+    .fatcol > DIV {
+        width: 942px !important;
+        background-image: url("http://cssimg.ngfiles.com/bg-main/pod-33.jpg") !important;}
+
+    li > DIV > DIV > DIV > p {
+        width: 100% !important;}
+
+    .podcontent {background-repeat: repeat-x !important;}
+    li:hover > a {
+        background: url(http://cssimg.ngfiles.com/icons/hovers/hoverticks-L.png) 902px -20px no-repeat !important;}}
+
+@-moz-document domain("imgur.com") {
+    .advertisement {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+@-moz-document domain("videoweed.es") {
+    .ad, .remove_ads {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+*[src^="http://cdncache3-a.akamaihd.net"] {
+    display: none !important;
+    position: absolute !important;
+    top: -99999px !important;
+    left: -999999px !important;}
+a[title="Click to Continue > by Text-Enhance"] {
+    pointer-events: none !important;
+    color: inherit !important;
+    text-decoration: initial !important;}
+
+@-moz-document url-prefix("http://adf.ly") {
+    #top + * + *, #Interstitual > table tr + tr {
+        display: none !important;}
+    #sitebar {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        top: 0px;
+        left: 0px;
+        background-repeat: repeat-x;
+        background-color: rgb(0,40,80);}}
+
+@-moz-document url-prefix("http://www.dailymotion.com/video") {
+    #right_content_box > #mc_Middle {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;}}
+
+@-moz-document domain("tiarawhy.com") {
+    *[src^="http://geo.hyperlinksecure.com"],
+    *[src^="http://adserver."],
+    *[href^="http://geo.hyperlinksecure.com"],
+    *[href^="http://adserver."] {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        display: block !important;
+        width: 50px !important;
+        visibility: hidden !important;
+        height: 50px !important;}}
+
+@-moz-document domain("galleryhip.com") {
+    #mg_overlay_window, #mg_overlay {
+        opacity: 0.001 !important;
+        pointer-events: none !important;}}
+
+@-moz-document domain("equestriaafterdark.org") {
+    *[class^="ad-block-"], .twilight {
+        display: none !important;}}
+
+@-moz-document domain("mediafire.com") {
+    *[id^=remove_ads_button], .mediaAds {
+	display: none !important;}}
+
+@-moz-document regexp(".*mediafire.com/listen.*") {
+    .mediaPlayerContainer {
+        position: initial !important;
+        margin-top: 40px;
+        margin-left: 0px !important;}}
+
+@-moz-document regexp(".*mediafire.com/download.*") {
+    .top, .left, .bottomAdLeaderboard, a.dlPromoContent {
+	display: none !important;}
+    
+    .dl-btn-container {
+	border-radius: 6px !important;}
+    
+    .center, .center > * {
+	left: 0px !important;
+	width: initial !important;}
+    
+    .center > .promo-dl-box > a {
+	width: initial !important;}}
+
+/* https://userstyles.org/styles/112260/yahoo-mail-minimal-remove-ads-by-atino-core Apr 15, 2016 */
+@-moz-document domain("mail.yahoo.com") {
+    /* author: Atino Core */
+    /* remove elements */
+    #yucs-web_search_button_wrapper, #yucs-top-bar, /* LOGO STUFF */
+    #yucs-network_link, /* Yahoo HOME */
+    #UHSearchWeb, #web-search-btn, #yucs-web_search_button_wrapper, /* web search button in search bar */
+    #masterNav, /* top bar with quick links */
+    .empty-folder-submsg2, .wrapperpane, /* ads in empty folders */
+    #theAd, #slot_TL1, #slot_mbrec
+			   {
+			       display: none;
+			   }
+
+    a.YLogoMY {
+	float: left; 
+	margin-right: 28px !important; 
+	margin-left:  30px !important; 
+    }
+
+    #UH {
+	width: 100% !important;
+	height: 2.5em; /* top bar layer above main content */
+	float: left;
+    }
+    #uhWrapper {
+	z-index: 100;
+    }
+
+    /* smaller search and better position */
+    #uhWrapper > table { 
+	width: 100% !important;
+	min-width: 200px !important;
+	margin-right: 20px;
+    }
+
+    #uhWrapper > table tr td:first-child {
+	width: 0 !important;
+    }
+    #mail-search-btn {
+	margin-right: 20px !important; 
+    }
+    #UHSearchBox {
+	height: 23px !important;
+	margin-top: 3px !important; 
+    }
+    #UHSearchProperty {
+	height: 23px !important;
+	line-height: 23px !important;
+	margin-top: 3px !important;
+	padding: 0 5px !important;
+    }
+    #Stencil .lt .typeahead-input-container {
+	min-width: 200px; 
+    }
+    
+    /* move main under the search bar */
+    #main {
+	top: 2.8em !important;
+    }
+
+    /* move main content back to right border */
+    #shellcontent,
+    .frost-container {
+	right: 0;
+    }
+    
+    /* move main content back to right border FIREFOX */
+    .wide-right-rail  #shellcontent,
+    .wide-right-rail  .frost-container {
+	right: 0;
+    }
+
+    /* right controls */
+    #yucs .yucs-fl-right {
+	margin-top: 7px !important;
+    }
+    
+    /* less height in folder list to show more folders at once */
+    .listnav .listnav-folder li {
+	padding-bottom: 0px;
+    }
+    
+    /* hide scrollbar in msg list if not needed */
+    #msg-list .list-view-items {
+	overflow-y: auto !important;
+    }
+}
+
+/* Yahoo Mail - Remove Ads Better
+ * https://userstyles.org/styles/58924/yahoo-mail-remove-ads-better 
+ */
+@-moz-document domain("mail.yahoo.com"){
+
+    #shellcontent{
+	right:0!important
+    }
+
+    #theAd, #theMNWAd, #slot_MON, #slot_LREC, #slot_MIP, #slot_MON_sent, .darla, .ch_mod, .gxBoom, .boom, #trendmastr-main, #masSearchAd, #slot_MB, #slot_mbrec, .mb-msg-read-img-ad, #mobilizer, .search-message-container-ad, .wrapperpane, .olympics-medal-counter {
+	display:none!important;
+	visibility:hidden!important;
+    }
+
+    .panescroll #toolbar {
+	right:0 !important;
+    }
+
+    .pc.panescroll #shellnavigation, .pc.panescroll #theAd, .pc.panescroll #shellcontent {
+	top: 0px !important;
+    }
+    
+    #main, #yucs, #yuhead-bucket {
+	max-width: 2560px !important;
+    }
+}
