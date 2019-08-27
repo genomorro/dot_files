@@ -35,7 +35,7 @@ alias genpasswd='gpg --gen-random --armor 1 8'
 # Functions
 
 drive() {
-    sudo mount.davfs -o uid=1000,gid=1000,dir_mode=775 https://dav.mailbox.org/servlet/webdav.infostore $HOME/Drive
+    rclone mount Net-C: $HOME/Drive --allow-non-empty &
 }
 
 copydvd() {
@@ -48,6 +48,10 @@ md5string() {
 
 oga() {
     for f in *.mp3 ; do ffmpeg -i "$f" -c:a libvorbis -qscale:a 9 "${f%.mp3}.oga" ; done
+}
+
+scan(){
+    scanimage --device 'epson2:net:192.168.1.4' -p --resolution 150 --mode Color -x 215.9 -y 279.4 --batch=`date +%Y%m%d-%H%M`-%d.pnm --batch-prompt
 }
 
 unpack () {
