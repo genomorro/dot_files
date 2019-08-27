@@ -73,6 +73,9 @@ shopt -s dirspell
 # it were the argument to the cd command
 shopt -s autocd
 
+# will append instead of overwrite the history.
+shopt -s histappend
+
 # Source: http://tinyurl.com/gvykz7g
 parse_git_branch () {
     c_red=`tput setaf 1`
@@ -94,7 +97,15 @@ parse_git_branch () {
     echo $gitver
 }
 
-PS1='┌─ [\!][\[\033[00;33m\]\t\[\033[0;0m\]][\[\033[0;32m\]\u@\h\[\033[0;0m\]][\[\033[00;34m\]\w\[\033[00m\]\[\033[0;0m\]]\[$(parse_git_branch)\]\n╰► '
+# Change the prompt
+case ${TERM} in
+    linux)
+	PS1='┌─ [\!][\[\033[00;33m\]\t\[\033[0;0m\]][\[\033[0;32m\]\u@\h\[\033[0;0m\]][\[\033[00;34m\]\w\[\033[00m\]\[\033[0;0m\]]\[$(parse_git_branch)\]\n└▶ '
+	;;	
+    *)
+	PS1='┌─ [\!][\[\033[00;33m\]\t\[\033[0;0m\]][\[\033[0;32m\]\u@\h\[\033[0;0m\]][\[\033[00;34m\]\w\[\033[00m\]\[\033[0;0m\]]\[$(parse_git_branch)\]\n└ᐅ '
+	;;
+esac
 
 # enable bash completion in interactive shells
 [ -f /etc/profile.d/bash-completion.sh ] && source /etc/profile.d/bash-completion.sh
@@ -103,7 +114,6 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 export HISTCONTROL=erasedups
 export HISTTIMEFORMAT="%F %T "
-export PATH=$PATH:$HOME/.local/bin
 
 #complete -cf sudo
 
